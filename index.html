@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TerraTag — Material Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="TerraTag home"><span class="brand-mark">T</span><span>TerraTag</span></a>
+    <nav><button class="nav-item active">Workspace</button><button class="nav-item">Samples</button><button class="nav-item">Reports</button></nav>
+    <div class="top-actions"><button class="icon-btn" title="Notifications">◌</button><div class="avatar">AR</div></div>
+  </header>
+
+  <main>
+    <section class="page-head">
+      <div><div class="eyebrow">PROJECT / MT. ISABEL</div><h1>North Ridge alteration model</h1><p>Interactive material map · Section NR-04</p></div>
+      <div class="head-actions"></div>
+    </section>
+
+    <section class="stat-row" aria-label="Project summary">
+      <article><span class="stat-icon cyan">◆</span><div><small>Mapped area</small><strong>1.84 km²</strong></div><em>+12%</em></article>
+      <article><span class="stat-icon amber">⌁</span><div><small>Material zones</small><strong id="zoneCount">8 zones</strong></div><em>verified</em></article>
+      <article><span class="stat-icon violet">⌖</span><div><small>Sample points</small><strong id="sampleCount">24 points</strong></div><em>3 pending</em></article>
+      <article><span class="stat-icon green">✓</span><div><small>Model confidence</small><strong>87.4%</strong></div><em>high</em></article>
+    </section>
+
+    <section class="workspace">
+      <aside class="panel layers-panel">
+        <div class="panel-title"><div><span class="eyebrow">MAP CONTROL</span><h2 id="panelHeading">Material layers</h2></div><button class="icon-btn" id="allLayers" title="Toggle all">⌘</button></div>
+        <div class="panel-tabs"><button class="active" data-panel="layers">Layers</button><button data-panel="index">Marking index <b id="markCount">0</b></button></div>
+        <div id="layersView"><label class="search"><span>⌕</span><input id="layerSearch" placeholder="Find material..." /></label><div class="layer-list" id="layerList"></div></div>
+        <div id="indexView" hidden><div class="index-help">Numbered field interpretations. Click to locate; drag on the map to reposition.</div><div class="mark-index" id="markIndex"><div class="empty-index">No markings yet.</div></div></div>
+        <div class="panel-foot"><button class="btn ghost full" id="newLayerBtn">＋ Draw material layer</button></div>
+      </aside>
+
+      <section class="map-card">
+        <div class="map-toolbar">
+          <div class="map-identity"><span class="brand-mark">T</span><span><strong>North Ridge</strong><small>Section NR-04</small></span></div>
+          <div class="segmented"><button class="active" data-view="geology">Geology</button><button data-view="confidence">Confidence</button></div>
+          <div class="map-tools"><span class="scale-badge">SECTION VIEW</span><button class="icon-btn" id="zoomOut">−</button><span id="zoomLevel">100%</span><button class="icon-btn" id="zoomIn">＋</button><button class="icon-btn" id="resetView">⌂</button></div>
+          <div class="map-actions"><button class="btn ghost" id="exportBtn">⇩ Export</button><button class="btn primary" id="tagBtn">＋ Mark</button></div>
+        </div>
+        <div class="map-stage" id="mapStage">
+          <div class="depth-axis"><span>0 m</span><span>−200</span><span>−400</span><span>−600</span><span>−800</span><span>−900</span></div>
+          <svg id="geoMap" viewBox="0 0 800 520" role="img" aria-label="Interactive geological cross section">
+            <defs>
+              <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#273137" stroke-width=".6" opacity=".45"/></pattern>
+              <linearGradient id="rock" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#334047"/><stop offset="1" stop-color="#182126"/></linearGradient>
+              <filter id="glow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+            <path d="M0 70Q95 40 180 66Q255 83 330 57Q420 25 500 64Q600 80 800 53V520H0Z" fill="#d8d4c8"/>
+            <path class="zone" data-zone="Propylitic" d="M34 70Q108 52 180 68L268 167Q300 240 315 320L337 520H38ZM800 54Q646 77 530 65L502 150Q482 235 480 325L465 520H800Z"/>
+            <path class="zone" data-zone="Argillic" d="M180 68Q250 79 330 58L353 126Q315 165 301 225L315 320L337 520H389L374 290L349 188L287 120ZM530 65Q490 54 451 56L430 130Q482 164 500 220L480 325L465 520H424L437 289L461 184L522 118Z"/>
+            <path class="zone" data-zone="Sericitic" d="M287 120Q325 100 356 111L375 180Q355 232 365 308L389 520H413L406 288L390 171L337 92ZM522 118Q489 99 456 110L434 182Q451 233 443 310L424 520H405L412 286L426 167L473 91Z"/>
+            <path class="zone" data-zone="Advanced argillic" d="M337 92Q366 74 392 90L399 153L383 214L396 301L413 520H429L424 294L415 207L426 148L419 84ZM473 91Q447 73 419 84L426 148L415 207L424 294L429 520H446L458 303L445 214L461 151L469 92Z"/>
+            <path class="zone" data-zone="Silicification" d="M330 58Q377 33 419 50Q453 35 500 64L473 91Q447 73 419 84Q392 73 337 92ZM392 90L419 84L426 148L415 207L424 294L429 520H413L396 301L383 214L399 153Z"/>
+            <path class="zone" data-zone="Steam-heated cap" d="M112 56Q226 32 330 58Q375 34 419 50Q455 35 563 61L552 91Q476 78 418 82Q339 79 132 91Z"/>
+            <path class="zone" data-zone="Chalcedony blanket" d="M132 91Q251 70 337 92Q366 74 392 90L399 112Q310 105 220 122L155 118ZM419 84Q447 73 473 91Q526 75 552 91L535 117L465 119L426 109Z"/>
+            <path class="zone" data-zone="Ore zone" d="M404 107L419 84L432 107L424 177L439 231L430 300L438 390L428 486L417 395L420 302L408 232L418 176Z"/>
+            <path d="M407 49L420 43L431 52L426 93L418 119L410 89Z" fill="#283237" stroke="#111" stroke-width="2"/>
+            <g class="faults"><path d="M391 86L420 495"/><path d="M445 83L429 497"/><path d="M359 108L414 455"/><path d="M477 103L442 454"/></g>
+            <g class="veinlets"><path d="M405 158l-36-25m40 48l-42 12m47 18l-52 35m58-2l-33 40m41-9l-29 41m35-5l-26 38m34-3l-20 44"/><path d="M432 150l34-28m-31 64l43 7m-38 28l42 31m-47-1l34 42m-35-10l27 42"/></g>
+            <path class="water-table" d="M80 99Q245 90 418 101Q598 112 727 94"/>
+            <g class="surface-features"><path d="M372 53q8-20 16 0q10-27 19 0M473 52q8-16 15 0q8-22 17 0"/><text x="550" y="88">PALEOSURFACE</text><text x="565" y="107">WATER TABLE</text></g>
+            <g class="boiling-level"><path d="M335 218H475"/><text x="272" y="222">BOILING LEVEL</text></g>
+            <g class="temperature"><text x="12" y="142">100°C</text><text x="12" y="294">200°C</text><text x="12" y="475">300°C</text></g>
+            <g class="system-levels"><text x="757" y="112">UPPER</text><text x="757" y="285">MIDDLE</text><text x="757" y="465">LOWER</text><path d="M746 121h32M746 314h32"/></g>
+            <g class="custom-layers" id="customLayers"></g>
+            <g class="draw-preview" id="drawPreview"></g>
+            <g class="samples" id="samples"></g>
+            <g class="markings" id="markings"></g>
+            <rect width="800" height="520" fill="url(#grid)" pointer-events="none"/>
+            <g class="labels"><text x="92" y="205">PROPYLITIC</text><text x="698" y="205">PROPYLITIC</text><text x="235" y="170" transform="rotate(42 235 170)">ARGILLIC</text><text x="564" y="170" transform="rotate(-41 564 170)">ARGILLIC</text><text x="354" y="263" transform="rotate(82 354 263)">SERICITIC</text><text x="466" y="263" transform="rotate(-82 466 263)">SERICITIC</text><text x="382" y="177" transform="rotate(80 382 177)">ADV. ARGILLIC</text><text x="433" y="69">SILICA CAP</text><text x="426" y="275" transform="rotate(88 426 275)">Au–Cu ORE</text><text x="199" y="107">CHALCEDONY BLANKET</text><text x="215" y="64">STEAM-HEATED</text></g>
+          </svg>
+          <div class="orientation"><span>N</span><i></i><span>S</span></div>
+          <div class="distance-scale"><i></i><span>100 m</span></div>
+          <div class="draw-controls" id="drawControls" hidden><span><b id="vertexCount">0</b> vertices</span><button id="undoVertex">↶ Undo</button><button id="cancelLayer">Cancel</button><button id="finishLayer">Finish boundary</button></div>
+          <div class="map-hint" id="mapHint">Click a zone to inspect · Add a marking to annotate the section</div>
+        </div>
+      </section>
+
+      <aside class="panel detail-panel" id="detailPanel">
+        <div class="detail-accent" id="detailAccent"></div>
+        <div class="detail-head"><span class="eyebrow">SELECTED ZONE</span><button class="icon-btn" id="closeDetails">×</button></div>
+        <h2 id="detailName">Advanced argillic</h2><div class="status"><span></span> INTERPRETED</div>
+        <div class="confidence"><div><span>Confidence</span><strong id="detailConfidence">91%</strong></div><div class="bar"><i id="confidenceBar"></i></div></div>
+        <dl><div><dt>Depth range</dt><dd id="detailDepth">42–460 m</dd></div><div><dt>Est. volume</dt><dd id="detailVolume">0.34 Mm³</dd></div><div><dt>Last updated</dt><dd>18 Jun 2026</dd></div></dl>
+        <h3>Mineral assemblage</h3><div class="chips" id="mineralChips"></div>
+        <h3>Field observations</h3><p id="detailNotes">Strong quartz–alunite alteration with pervasive silica replacement near the structural core.</p>
+        <div class="assay"><span>Au grade (avg.)</span><strong id="detailGrade">1.82 <small>g/t</small></strong><em>▲ 0.24</em></div>
+        <button class="btn primary full" id="editZone">Edit zone data</button>
+      </aside>
+    </section>
+  </main>
+
+  <div class="toast" id="toast"></div>
+  <dialog id="tagDialog">
+    <form method="dialog" id="tagForm"><div class="dialog-head"><div><span class="eyebrow" id="dialogEyebrow">NEW OBSERVATION</span><h2 id="dialogTitle">Add material marking</h2></div><button value="cancel" class="icon-btn">×</button></div>
+      <label>Material<select id="materialSelect"></select></label><label>Sample ID<input id="sampleId" value="NR-025" required /></label><label>Field note<textarea id="sampleNote" placeholder="Add an observation..."></textarea></label>
+      <div class="dialog-actions"><button type="button" class="btn danger" id="deleteMark" hidden>Delete</button><span class="dialog-spacer"></span><button value="cancel" class="btn ghost">Cancel</button><button value="default" class="btn primary" id="saveTag">Place marking</button></div>
+    </form>
+  </dialog>
+  <dialog id="layerDialog">
+    <form method="dialog" id="layerForm"><div class="dialog-head"><div><span class="eyebrow">MATERIAL LAYER</span><h2>Name this boundary</h2></div><button value="cancel" class="icon-btn">×</button></div>
+      <label>Layer name<input id="layerName" placeholder="e.g. Quartz stockwork" required /></label>
+      <label>Display colour<input id="layerColor" type="color" value="#42c6a2" /></label>
+      <label>Mineral assemblage<input id="layerMinerals" placeholder="Quartz, pyrite, enargite" /></label>
+      <label>Interpretation note<textarea id="layerNote" placeholder="Describe the interpreted boundary..."></textarea></label>
+      <div class="dialog-actions"><button type="button" class="btn danger" id="deleteLayer" hidden>Delete layer</button><span class="dialog-spacer"></span><button value="cancel" class="btn ghost">Cancel</button><button type="button" class="btn primary" id="saveLayer">Save layer</button></div>
+    </form>
+  </dialog>
+  <script src="app.js"></script>
+</body>
+</html>
