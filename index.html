@@ -18,7 +18,7 @@
 
   <main>
     <section class="page-head">
-      <div><div class="eyebrow">PROJECT / MT. ISABEL</div><h1>North Ridge alteration model</h1><p>Interactive material map · Section NR-04</p></div>
+      <div><div class="eyebrow">RIO TINTO</div><h1>Rio Tinto alteration model</h1><p>Interactive material map · Section NR-04</p></div>
       <div class="head-actions"></div>
     </section>
 
@@ -32,15 +32,15 @@
     <section class="workspace">
       <aside class="panel layers-panel">
         <div class="panel-title"><div><span class="eyebrow">MAP CONTROL</span><h2 id="panelHeading">Material layers</h2></div><button class="icon-btn" id="allLayers" title="Toggle all">⌘</button></div>
-        <div class="panel-tabs"><button class="active" data-panel="layers">Layers</button><button data-panel="index">Marking index <b id="markCount">0</b></button></div>
+        <div class="panel-tabs"><button class="active" data-panel="layers">Layers</button><button data-panel="index">Map Objects <b id="markCount">0</b></button></div>
         <div id="layersView"><label class="search"><span>⌕</span><input id="layerSearch" placeholder="Find material..." /></label><div class="layer-list" id="layerList"></div></div>
         <div id="indexView" hidden><div class="index-help">Numbered field interpretations. Click to locate; drag on the map to reposition.</div><div class="mark-index" id="markIndex"><div class="empty-index">No markings yet.</div></div></div>
-        <div class="panel-foot"><button class="btn ghost full" id="newLayerBtn">＋ Draw material layer</button></div>
+        <div class="panel-foot" hidden><button class="btn ghost full" id="newLayerBtn">＋ Draw material layer</button></div>
       </aside>
 
       <section class="map-card">
         <div class="map-toolbar">
-          <div class="map-identity"><span class="brand-mark">T</span><span><strong>North Ridge</strong><small>Section NR-04</small></span></div>
+          <div class="map-identity"><span class="brand-mark">RT</span><span><strong>Rio Tinto</strong><small>Section NR-04</small></span></div>
           <div class="segmented"><button class="active" data-view="geology">Geology</button><button data-view="confidence">Confidence</button></div>
           <div class="map-tools"><span class="scale-badge">SECTION VIEW</span><button class="icon-btn" id="zoomOut">−</button><span id="zoomLevel">100%</span><button class="icon-btn" id="zoomIn">＋</button><button class="icon-btn" id="resetView">⌂</button></div>
           <div class="map-actions"><button class="btn ghost" id="exportBtn">⇩ Export</button><button class="btn primary" id="tagBtn">＋ Mark</button></div>
@@ -49,7 +49,7 @@
           <div class="depth-axis"><span>0 m</span><span>−200</span><span>−400</span><span>−600</span><span>−800</span><span>−900</span></div>
           <svg id="geoMap" viewBox="0 0 800 520" role="img" aria-label="Interactive geological cross section">
             <defs>
-              <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#273137" stroke-width=".6" opacity=".45"/></pattern>
+              <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#365247" stroke-width=".45" opacity=".28"/></pattern>
               <linearGradient id="rock" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#334047"/><stop offset="1" stop-color="#182126"/></linearGradient>
               <filter id="glow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
             </defs>
@@ -60,13 +60,13 @@
             <path class="zone" data-zone="Advanced argillic" d="M337 92Q366 74 392 90L399 153L383 214L396 301L413 520H429L424 294L415 207L426 148L419 84ZM473 91Q447 73 419 84L426 148L415 207L424 294L429 520H446L458 303L445 214L461 151L469 92Z"/>
             <path class="zone" data-zone="Silicification" d="M330 58Q377 33 419 50Q453 35 500 64L473 91Q447 73 419 84Q392 73 337 92ZM392 90L419 84L426 148L415 207L424 294L429 520H413L396 301L383 214L399 153Z"/>
             <path class="zone" data-zone="Steam-heated cap" d="M112 56Q226 32 330 58Q375 34 419 50Q455 35 563 61L552 91Q476 78 418 82Q339 79 132 91Z"/>
-            <path class="zone" data-zone="Chalcedony blanket" d="M132 91Q251 70 337 92Q366 74 392 90L399 112Q310 105 220 122L155 118ZM419 84Q447 73 473 91Q526 75 552 91L535 117L465 119L426 109Z"/>
+            <path class="zone" data-zone="Chalcedony blanket" d="M132 104Q251 93 337 105Q366 91 392 104L399 128Q310 119 220 136L155 132ZM419 101Q447 91 473 105Q526 93 552 104L535 131L465 133L426 124Z"/>
             <path class="zone" data-zone="Ore zone" d="M404 107L419 84L432 107L424 177L439 231L430 300L438 390L428 486L417 395L420 302L408 232L418 176Z"/>
-            <path d="M407 49L420 43L431 52L426 93L418 119L410 89Z" fill="#283237" stroke="#111" stroke-width="2"/>
+            <path class="breccia-body" d="M407 49L420 43L431 52L426 93L418 119L410 89Z" fill="#283237" stroke="#111" stroke-width="2"/>
             <g class="faults"><path d="M391 86L420 495"/><path d="M445 83L429 497"/><path d="M359 108L414 455"/><path d="M477 103L442 454"/></g>
-            <g class="veinlets"><path d="M405 158l-36-25m40 48l-42 12m47 18l-52 35m58-2l-33 40m41-9l-29 41m35-5l-26 38m34-3l-20 44"/><path d="M432 150l34-28m-31 64l43 7m-38 28l42 31m-47-1l34 42m-35-10l27 42"/></g>
+            <g class="veinlets"><path d="M405 158L369 133"/><path d="M409 181L367 193"/><path d="M414 211L362 246"/><path d="M420 244L387 284"/><path d="M428 275L399 316"/><path d="M434 311L408 349"/><path d="M442 348L422 392"/><path d="M432 150L466 122"/><path d="M435 186L478 193"/><path d="M440 221L482 252"/><path d="M435 251L469 293"/><path d="M434 283L461 325"/></g>
             <path class="water-table" d="M80 99Q245 90 418 101Q598 112 727 94"/>
-            <g class="surface-features"><path d="M372 53q8-20 16 0q10-27 19 0M473 52q8-16 15 0q8-22 17 0"/><text x="550" y="88">PALEOSURFACE</text><text x="565" y="107">WATER TABLE</text></g>
+            <g class="surface-features"><path class="surface-vent" d="M372 53q8-20 16 0q10-27 19 0"/><path class="surface-vent" d="M473 52q8-16 15 0q8-22 17 0"/><text x="550" y="88">PALEOSURFACE</text><text x="565" y="107">WATER TABLE</text></g>
             <g class="boiling-level"><path d="M335 218H475"/><text x="272" y="222">BOILING LEVEL</text></g>
             <g class="temperature"><text x="12" y="142">100°C</text><text x="12" y="294">200°C</text><text x="12" y="475">300°C</text></g>
             <g class="system-levels"><text x="757" y="112">UPPER</text><text x="757" y="285">MIDDLE</text><text x="757" y="465">LOWER</text><path d="M746 121h32M746 314h32"/></g>
@@ -75,25 +75,49 @@
             <g class="samples" id="samples"></g>
             <g class="markings" id="markings"></g>
             <rect width="800" height="520" fill="url(#grid)" pointer-events="none"/>
-            <g class="labels"><text x="92" y="205">PROPYLITIC</text><text x="698" y="205">PROPYLITIC</text><text x="235" y="170" transform="rotate(42 235 170)">ARGILLIC</text><text x="564" y="170" transform="rotate(-41 564 170)">ARGILLIC</text><text x="354" y="263" transform="rotate(82 354 263)">SERICITIC</text><text x="466" y="263" transform="rotate(-82 466 263)">SERICITIC</text><text x="382" y="177" transform="rotate(80 382 177)">ADV. ARGILLIC</text><text x="433" y="69">SILICA CAP</text><text x="426" y="275" transform="rotate(88 426 275)">Au–Cu ORE</text><text x="199" y="107">CHALCEDONY BLANKET</text><text x="215" y="64">STEAM-HEATED</text></g>
+            <g class="labels"><text data-label-zone="Propylitic" x="92" y="205">PROPYLITIC</text><text data-label-zone="Propylitic" x="698" y="205">PROPYLITIC</text><text data-label-zone="Argillic" x="278" y="190">ARGILLIC</text><text data-label-zone="Argillic" x="522" y="190">ARGILLIC</text><text data-label-zone="Sericitic" x="363" y="300">SERICITIC</text><text data-label-zone="Sericitic" x="457" y="300">SERICITIC</text><text data-label-zone="Advanced argillic" x="391" y="214">ADV. ARG.</text><text data-label-zone="Advanced argillic" x="451" y="214">ADV. ARG.</text><text data-label-zone="Silicification" x="432" y="71">SILICIFICATION</text><text data-label-zone="Ore zone" x="426" y="275" transform="rotate(88 426 275)">Au–Cu ORE</text><text data-label-zone="Chalcedony blanket" x="210" y="122">CHALCEDONY BLANKET</text><text data-label-zone="Steam-heated cap" x="215" y="70">STEAM-HEATED CAP</text></g>
+            <g class="preset-handles" id="presetHandles"></g>
           </svg>
           <div class="orientation"><span>N</span><i></i><span>S</span></div>
-          <div class="distance-scale"><i></i><span>100 m</span></div>
-          <div class="draw-controls" id="drawControls" hidden><span><b id="vertexCount">0</b> vertices</span><button id="undoVertex">↶ Undo</button><button id="cancelLayer">Cancel</button><button id="finishLayer">Finish boundary</button></div>
+          <div class="distance-scale"><span>0</span><i></i><span>100 m</span></div>
           <div class="map-hint" id="mapHint">Click a zone to inspect · Add a marking to annotate the section</div>
         </div>
       </section>
 
       <aside class="panel detail-panel" id="detailPanel">
         <div class="detail-accent" id="detailAccent"></div>
-        <div class="detail-head"><span class="eyebrow">SELECTED ZONE</span><button class="icon-btn" id="closeDetails">×</button></div>
-        <h2 id="detailName">Advanced argillic</h2><div class="status"><span></span> INTERPRETED</div>
-        <div class="confidence"><div><span>Confidence</span><strong id="detailConfidence">91%</strong></div><div class="bar"><i id="confidenceBar"></i></div></div>
-        <dl><div><dt>Depth range</dt><dd id="detailDepth">42–460 m</dd></div><div><dt>Est. volume</dt><dd id="detailVolume">0.34 Mm³</dd></div><div><dt>Last updated</dt><dd>18 Jun 2026</dd></div></dl>
+        <div class="detail-head"><div class="inline-heading"><span class="eyebrow">SELECTED</span><strong id="detailType">Material zone</strong></div><button class="icon-btn" id="closeDetails">×</button></div>
+        <h2 id="detailName">Advanced argillic</h2><div class="status"><span></span><button id="detailStatus" disabled>INTERPRETED</button></div>
+        <div class="confidence"><div><span>Confidence</span><strong id="detailConfidence">91%</strong></div><input id="confidenceInput" type="range" min="1" max="100" value="91" disabled><div class="bar"><i id="confidenceBar"></i></div></div>
+        <dl><div><dt>Depth range</dt><dd id="detailDepth" contenteditable="false">42–460 m</dd></div><div><dt>Est. volume</dt><dd id="detailVolume" contenteditable="false">0.34 Mm³</dd></div><div><dt>Last updated</dt><dd id="detailUpdated">18 Jun 2026</dd></div></dl>
         <h3>Mineral assemblage</h3><div class="chips" id="mineralChips"></div>
-        <h3>Field observations</h3><p id="detailNotes">Strong quartz–alunite alteration with pervasive silica replacement near the structural core.</p>
-        <div class="assay"><span>Au grade (avg.)</span><strong id="detailGrade">1.82 <small>g/t</small></strong><em>▲ 0.24</em></div>
+        <h3>Field observations</h3><p id="detailNotes" contenteditable="false">Strong quartz–alunite alteration with pervasive silica replacement near the structural core.</p>
+        <div class="assay"><span>Au grade (avg.)</span><strong id="detailGrade" contenteditable="false">1.82 <small>g/t</small></strong><em>▲ 0.24</em></div>
         <button class="btn primary full" id="editZone">Edit zone data</button>
+      </aside>
+
+      <aside class="map-legend" id="mapLegend">
+        <div class="legend-head"><div class="inline-heading"><span class="eyebrow">MAP KEY</span><strong>Legend</strong></div><button id="editLegend">Edit</button></div>
+        <div class="legend-row locked-legend expandable" data-key="layers"><button class="legend-expand" id="toggleMaterialTypes" aria-expanded="false"><span class="legend-symbol layers-symbol"><i></i><i></i><i></i></span></button><input class="legend-label" value="Material layers" disabled><input class="legend-color" type="color" value="#7ea867" disabled><label class="legend-toggle" title="Show or hide all material layers"><input type="checkbox" checked><i></i></label></div><div class="material-type-list" id="materialTypeList" hidden></div>
+        <div class="legend-row" data-key="faults"><span class="legend-symbol line fault-symbol"></span><input class="legend-label" value="Faults" disabled><input class="legend-color" type="color" value="#171c1e" disabled><label class="legend-toggle" title="Show or hide faults"><input type="checkbox" checked><i></i></label></div>
+        <div class="legend-row" data-key="veins"><span class="legend-symbol line vein-symbol"></span><input class="legend-label" value="Hydrothermal veins" disabled><input class="legend-color" type="color" value="#db4639" disabled><label class="legend-toggle" title="Show or hide veins"><input type="checkbox" checked><i></i></label></div>
+        <div class="legend-row" data-key="samples"><span class="legend-symbol dot sample-symbol"></span><input class="legend-label" value="Sample points" disabled><input class="legend-color" type="color" value="#f4b860" disabled><label class="legend-toggle" title="Show or hide samples"><input type="checkbox" checked><i></i></label></div>
+        <div class="legend-row" data-key="labels"><span class="legend-symbol text-symbol">T</span><input class="legend-label" value="Map labels" disabled><input class="legend-color" type="color" value="#17211d" disabled><label class="legend-toggle" title="Show or hide labels"><input type="checkbox" checked><i></i></label></div>
+        <div class="legend-row" data-key="water"><span class="legend-symbol line water-symbol"></span><input class="legend-label" value="Water levels" disabled><input class="legend-color" type="color" value="#26b9c6" disabled><label class="legend-toggle" title="Show or hide water levels"><input type="checkbox" checked><i></i></label></div>
+        <div class="legend-row" data-key="breccia"><span class="legend-symbol breccia-symbol"></span><input class="legend-label" value="Hydrothermal breccia" disabled><input class="legend-color" type="color" value="#283237" disabled><label class="legend-toggle" title="Show or hide breccia"><input type="checkbox" checked><i></i></label></div>
+        <div class="legend-row" data-key="vents"><span class="legend-symbol vent-symbol">⌁</span><input class="legend-label" value="Surface vents" disabled><input class="legend-color" type="color" value="#51645b" disabled><label class="legend-toggle" title="Show or hide vents"><input type="checkbox" checked><i></i></label></div>
+        <button class="add-category" id="addLegendCategory">＋ Add category</button>
+      </aside>
+
+      <aside class="map-toolbox" id="mapToolbox" aria-label="Map editing tools">
+        <div class="toolbox-head inline-heading"><span class="eyebrow">TOOLS</span><strong>Map controls</strong></div>
+        <div class="mode-switch"><button class="active" data-mode="view">View</button><button data-mode="edit">Edit</button></div>
+        <div class="edit-tools">
+          <div class="category-hint" id="categoryHint">Choose <b>Mark</b> beside a legend category.</div>
+          <div class="selection-properties" id="selectionProperties" hidden><div class="inline-heading"><span class="eyebrow">SELECTED</span><strong id="selectedType">Object</strong></div><label>Name<input id="objectName"></label><label>Colour<input id="objectColor" type="color"></label><label>Size<input id="objectSize" type="range" min="1" max="16" step="1"></label></div>
+          <div class="drawing-actions" id="drawingActions" hidden><div><b id="vertexCount">0</b> vertices</div><button id="undoVertex">↶ Undo point</button><button id="cancelLayer">Cancel</button><button id="finishLayer">Finish</button></div>
+          <div class="tool-footer"><button class="tool" id="undoAction" title="Undo"><span>↶</span>Undo</button><button class="tool danger-tool" id="deleteSelection" title="Delete"><span>×</span>Delete</button><button class="tool restore-tool" id="restoreOriginal" title="Restore"><span>↺</span>Restore</button><button class="tool done-tool" id="doneEditing" title="Done"><span>✓</span>Done</button></div>
+        </div>
       </aside>
     </section>
   </main>
@@ -106,14 +130,17 @@
     </form>
   </dialog>
   <dialog id="layerDialog">
-    <form method="dialog" id="layerForm"><div class="dialog-head"><div><span class="eyebrow">MATERIAL LAYER</span><h2>Name this boundary</h2></div><button value="cancel" class="icon-btn">×</button></div>
-      <label>Layer name<input id="layerName" placeholder="e.g. Quartz stockwork" required /></label>
+    <form method="dialog" id="layerForm"><div class="dialog-head"><div><span class="eyebrow" id="shapeDialogEyebrow">MATERIAL LAYER</span><h2 id="shapeDialogTitle">Name this layer</h2></div><button value="cancel" class="icon-btn">×</button></div>
+      <label><span id="shapeNameLabel">Layer name</span><input id="layerName" placeholder="e.g. Quartz stockwork" required /></label>
       <label>Display colour<input id="layerColor" type="color" value="#42c6a2" /></label>
       <label>Mineral assemblage<input id="layerMinerals" placeholder="Quartz, pyrite, enargite" /></label>
       <label>Interpretation note<textarea id="layerNote" placeholder="Describe the interpreted boundary..."></textarea></label>
       <div class="dialog-actions"><button type="button" class="btn danger" id="deleteLayer" hidden>Delete layer</button><span class="dialog-spacer"></span><button value="cancel" class="btn ghost">Cancel</button><button type="button" class="btn primary" id="saveLayer">Save layer</button></div>
     </form>
   </dialog>
+  <dialog id="categoryDialog"><form method="dialog"><div class="dialog-head"><div><span class="eyebrow">NEW LEGEND CATEGORY</span><h2>Add mapping category</h2></div><button value="cancel" class="icon-btn">×</button></div><label>Name<input id="categoryName" placeholder="e.g. Drill holes"></label><label>Category type<select id="categoryType"><option value="mineral">Mineral layer</option><option value="marking">Map marking</option></select></label><label id="geometryField">Geometry<select id="categoryGeometry"><option value="point">Point</option><option value="line">Line</option><option value="area">Area</option><option value="text">Text</option></select></label><label>Symbol / style<select id="categorySymbol"></select></label><label>Colour<input id="categoryColor" type="color" value="#7c5cff"></label><div class="dialog-actions"><button value="cancel" class="btn ghost">Cancel</button><button type="button" class="btn primary" id="saveCategory">Add category</button></div></form></dialog>
+  <dialog id="sampleDialog"><form method="dialog"><div class="dialog-head"><div><span class="eyebrow">SAMPLE</span><h2 id="sampleDialogTitle">View sample report</h2></div><button value="cancel" class="icon-btn">×</button></div><p id="sampleDialogName"></p><label id="sampleLinkField" hidden>Sample report link<input id="sampleReportLink" type="url" placeholder="https://…"></label><div class="dialog-actions"><button value="cancel" class="btn ghost">Close</button><button type="button" class="btn primary" id="sampleDialogAction">View sample report</button></div></form></dialog>
+  <dialog id="objectNameDialog"><form method="dialog"><div class="dialog-head"><div><span class="eyebrow" id="objectDialogEyebrow">MAP POINT</span><h2 id="objectDialogTitle">Name this point</h2></div><button value="cancel" class="icon-btn">×</button></div><label><span id="objectDialogLabel">Point name</span><input id="newObjectName" required></label><div class="dialog-actions"><button value="cancel" class="btn ghost">Cancel</button><button type="button" class="btn primary" id="confirmObjectName">Continue</button></div></form></dialog>
   <script src="app.js"></script>
 </body>
 </html>
