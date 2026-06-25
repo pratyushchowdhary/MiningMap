@@ -1,0 +1,31 @@
+<!-- Editable default mine map source. Edit this file in Figma, Illustrator, Inkscape, or VS Code.
+     When served over HTTP/GitHub Pages, index.html loads this SVG as the default map. -->
+<svg id="geoMap" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-label="Interactive geological cross section">
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#365247" stroke-width=".45" opacity=".28"/></pattern>
+    <linearGradient id="rock" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#334047"/><stop offset="1" stop-color="#182126"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <path class="zone" data-zone="Propylitic" d="M 34 70 C 83.3333 58 65 48.8333 113 59.5 L 135 88 L 157 115 H 200.5 L 232.5 176.5 C 265.5 221 277 272.167 287 325.5 L 325 520 H 38 L 34 70Z M 800 54 C 733 60.5 773 54 698.5 68 L 647 147.5 C 603.5 193.5 587.5 313 546 387.5 L 542.5 463.5 L 565 520 H 800 V 54Z"/>
+  <path class="zone" data-zone="Argillic" d="M 198 118.155 L 202.392 122.191 L 259.982 221.643 L 288.777 321.095 L 327.17 520 H 371.672 L 346.647 482.249 L 354.155 430.99 L 346.647 340.685 L 322.123 281.575 L 317.619 229.42 L 273.296 127.66 L 258.56 115.175 L 231.033 118.155 H 198Z M 702 69.9737 L 653.616 66 L 590.04 103.792 L 529.302 217.665 L 510.57 344.467 V 430.99 L 516.814 477.235 L 500.353 520 H 564.496 L 540.088 457.345 L 545.196 387.231 L 577.552 321.095 L 610.409 209.055 L 667.966 122.191 L 702 69.9737Z"/>
+  <path class="zone" data-zone="Sericitic" d="M 261 116.473 L 276 137.588 L 319 241.087 L 322.75 283.449 L 346.5 339.108 L 354.5 429.554 L 346.5 483.722 L 371.5 520 H 382.5 L 367.5 478.256 L 375.5 402.222 L 371.5 321.218 L 354.5 275.001 V 241.087 L 339.5 145.793 L 331 112 L 261 116.473Z M 584 116.473 H 510 L 499 137.588 L 483 201.5 L 476 294 L 471.5 379 L 492.5 473.5 L 483 520 H 499 L 520 478.256 L 510 429.554 V 339.108 L 533 206.5 L 574 131.271 L 584 116.473Z"/>
+  <path class="zone" data-zone="Advanced argillic" d="M 365.27 109 L 333 112.487 L 347.894 192.695 L 355.564 248.491 V 274.895 L 369.64 321.724 L 375.353 427.338 L 365.27 478.651 L 375.353 497.582 L 378.674 520 C 392.749 520 383.142 520 383.142 520 V 492.6 L 387.764 460.716 L 403 416.876 V 368.553 L 397.043 274.895 L 393.099 211.625 L 365.27 150.847 V 109Z M 504.5 118.5 L 475.246 116 L 465 162 V 229.5 L 461.07 280 L 453.5 338 V 398 L 470 443 L 475.246 480 L 461.07 519.5 C 475.246 519.5 481 519.5 481 519.5 L 493.5 474.5 L 470 375.5 L 481 259 V 212 L 487.06 172.5 L 504.5 118.5Z"/>
+  <path class="zone" data-zone="Silicification" d="M 426 110.5 L 416 118 L 413.5 129 L 409.1 142.5 L 413.5 212.288 L 409.1 260.368 L 417.5 328.641 L 413.5 433.456 L 395.9 488.748 L 400.3 519.519 H 381 L 385 463.746 L 400.3 414.224 V 327.68 L 395.9 260.368 V 212.288 L 365 149.303 V 105.976 L 426 110.5Z M 475 112.935 L 467 154.592 V 212.288 L 461.9 260.368 L 453 332.124 V 394.252 L 467 437.493 L 475 476.247 L 471 505 L 461.9 520 H 453 L 457.5 505 V 476.247 L 439.9 414.224 L 435.5 357.489 V 322.391 L 439.9 265.657 L 435.5 212.288 L 439.9 179.593 V 133.5 L 438 120 L 436 111.5 L 449 112.935 H 475Z"/>
+  <path class="zone" data-zone="Steam-heated cap" d="M 112 56.2954 C 196.931 40.4304 278.137 41.0914 355.619 58.2785 C 389.144 42.4135 422.297 39.7693 455.078 50.346 C 481.898 40.4304 571.039 51.8129 651.5 69 L 603.707 91 C 547.086 82.406 497.171 79.432 453.96 82.076 C 395.104 80.093 288.568 83.068 134.35 91 L 112 56.2954Z"/>
+  <path class="zone" data-zone="Chalcedony blanket" d="M 132 87.136 C 220.778 79.834 283.341 76.183 347.5 84.149 C 369.135 74.8553 417.27 78.506 436.667 87.136 L 444.5 111.034 C 378.103 105.06 297.619 107.715 230.476 119 L 157.738 115.017 L 132 87.136Z M 430.786 84.149 C 451.675 77.5106 495.103 74.8553 514.5 84.149 C 554.04 76.183 595.103 85.198 614.5 92.5 L 582.976 114.021 L 504.643 116.013 L 444.5 111.034 L 430.786 84.149Z"/>
+  <path class="zone" data-zone="Ore zone" d="M 427 110.5 L 434.5 111.5 L 437.5 113 V 118 L 439 142.265 L 441 182.523 V 251.609 L 437 321.192 L 439 410.656 L 454.5 443.459 L 459 482.723 L 454.5 505.586 V 520 H 426.75 H 399 L 393 490.676 L 413 434.016 L 417 321.192 L 409 251.609 L 413 201.907 L 409 142.265 L 417.5 118 L 427 110.5Z"/>
+  <g class="faults"><path d="M360 96L405 500"/><path d="M452 95L430 500"/><path d="M315 138L372 430"/><path d="M515 132L458 428"/></g>
+  <g class="veinlets"><path d="M392 142L425 170"/><path d="M382 178L424 190"/><path d="M377 218L418 205"/><path d="M382 248L420 232"/><path d="M390 292L421 270"/><path d="M405 330L428 300"/><path d="M418 378L434 335"/><path d="M450 145L484 118"/><path d="M448 185L492 198"/><path d="M446 224L498 255"/><path d="M444 265L488 315"/><path d="M440 306L475 368"/><path d="M435 352L458 430"/></g>
+  <path class="water-table" d="M80 100H727"/>
+  <g class="surface-features"><text x="118" y="78">PALEOSURFACE</text><text x="98" y="105">WATER TABLE</text></g>
+  <g class="boiling-level"><path d="M80 218H330"/><text x="112" y="222">BOILING LEVEL</text></g>
+  <g class="temperature"><text x="12" y="142">100°C</text><text x="12" y="222">150°C</text><text x="12" y="294">200°C</text><text x="12" y="475">300°C</text></g>
+  <g class="system-levels"><text x="757" y="112">UPPER</text><text x="757" y="285">MIDDLE</text><text x="757" y="465">LOWER</text><path d="M746 121h32M746 314h32"/></g>
+            <g class="custom-layers" id="customLayers"></g>
+  <g class="draw-preview" id="drawPreview"></g>
+  <g class="drillholes" id="drillholes"><path d="M165 42L330 445"/><path d="M235 48L365 490"/><path d="M315 38L390 475"/><path d="M365 42L410 500"/><path d="M408 42L420 495"/><path d="M432 42L428 495"/><path d="M480 42L438 485"/><path d="M555 52L462 448"/><path d="M625 65L495 410"/><path d="M690 82L535 370"/></g>
+  <g class="samples" id="samples"></g>
+  <g class="markings" id="markings"></g>
+  <g class="labels"></g>
+  <g class="preset-handles" id="presetHandles"></g>
+</svg>

@@ -1,0 +1,118 @@
+<svg width="1120" height="720" viewBox="0 0 1120 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>Mining material map design source</title>
+  <desc>Figma-friendly editable map-only SVG with material layers, labels, drillhole/sample markers, and legend. This is not the app runtime SVG.</desc>
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M20 0H0V20" fill="none" stroke="#365247" stroke-width=".55" opacity=".22"/>
+    </pattern>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#26372C" flood-opacity=".16"/>
+    </filter>
+    <style>
+      .label{font-family:DM Mono,Menlo,monospace;font-size:12px;font-weight:700;letter-spacing:.06em;fill:#17211d;opacity:.76}
+      .small{font-size:10px;font-weight:600;opacity:.68}
+      .legendText{font-family:Manrope,Arial,sans-serif;font-size:15px;font-weight:700;fill:#26362e}
+      .legendSmall{font-family:DM Mono,Menlo,monospace;font-size:11px;font-weight:600;letter-spacing:.14em;fill:#0f9b94}
+    </style>
+  </defs>
+
+  <rect width="1120" height="720" fill="#DCE4DE"/>
+  <rect x="0" y="0" width="1120" height="720" fill="url(#grid)"/>
+
+  <g id="Map only" transform="translate(70 45)">
+    <rect x="0" y="0" width="800" height="520" rx="14" fill="#E6EEE9" opacity=".28"/>
+
+    <g id="Base host rock">
+      <path d="M0 70Q95 40 180 66Q255 83 330 57Q420 25 500 64Q600 80 800 53V520H0Z" fill="#D8D4C8"/>
+    </g>
+
+    <g id="Material layers" opacity=".9" stroke="#9AABAE" stroke-width="1.3">
+      <path id="Propylitic" d="M34 70Q108 52 180 68L268 167Q300 240 315 320L337 520H38ZM800 54Q646 77 530 65L502 150Q482 235 480 325L465 520H800Z" fill="#7EA867"/>
+      <path id="Argillic" d="M235 70L285 120L315 220L330 320L350 520H395L385 320L370 220L350 120L320 70ZM565 70L480 70L450 120L430 220L415 320L405 520H450L470 320L485 220L515 120Z" fill="#DCCB74"/>
+      <path id="Sericitic" d="M320 70L350 120L370 220L385 320L395 520H410L405 320L392 220L378 120L360 70ZM480 70L440 70L422 120L408 220L395 320L390 520H405L415 320L430 220L450 120Z" fill="#EAD7BD"/>
+      <path id="Advanced argillic" d="M360 70L378 120L392 220L405 320L410 520H416L410 390L416 300L408 230L400 180L400 120L390 70ZM440 70L430 70L420 120L420 180L412 230L420 300L414 390L416 520H422L425 320L438 220L422 120Z" fill="#EF9B68"/>
+      <path id="Silicification" d="M390 70L400 120L400 180L408 230L416 300L410 390L416 500L410 500L404 390L410 300L402 230L404 180L402 120L410 75ZM430 75L438 120L436 180L440 230L432 300L438 390L430 500H422L428 390L422 300L430 230L420 180L420 120Z" fill="#6EB9C9"/>
+      <path id="Steam-heated cap" d="M112 56Q226 32 330 58Q375 34 419 50Q455 35 563 61L552 91Q476 78 418 82Q339 79 132 91Z" fill="#E7CF55"/>
+      <path id="Chalcedony blanket" d="M132 104Q251 93 337 105Q366 91 392 104L399 128Q310 119 220 136L155 132ZM419 101Q447 91 473 105Q526 93 552 104L535 131L465 133L426 124Z" fill="#B7A2CA"/>
+      <path id="Ore zone" d="M410 75L430 75L438 120L436 180L440 230L432 300L438 390L430 500H416L410 390L416 300L408 230L412 180L408 120Z" fill="#E64D3F"/>
+    </g>
+
+    <g id="Water and boiling levels" fill="none" stroke="#26B9C6" stroke-width="2" stroke-dasharray="4 6">
+      <path id="Water table" d="M80 100H727"/>
+      <path id="Boiling level" d="M80 218H330"/>
+    </g>
+
+    <g id="Faults" fill="none" stroke="#171C1E" stroke-width="5" opacity=".88">
+      <path d="M391 86L420 495"/>
+      <path d="M445 83L429 497"/>
+      <path d="M359 108L414 455"/>
+      <path d="M477 103L442 454"/>
+    </g>
+
+    <g id="Hydrothermal veins" fill="none" stroke="#DB4639" stroke-width="2.3">
+      <path d="M405 158L369 133"/><path d="M409 181L367 193"/><path d="M414 211L362 246"/>
+      <path d="M420 244L387 284"/><path d="M428 275L399 316"/><path d="M434 311L408 349"/>
+      <path d="M442 348L422 392"/><path d="M432 150L466 122"/><path d="M435 186L478 193"/>
+      <path d="M440 221L482 252"/><path d="M435 251L469 293"/><path d="M434 283L461 325"/>
+    </g>
+
+    <g id="Drillhole traces" fill="none" stroke="#60737A" stroke-width="2" stroke-dasharray="7 5" opacity=".9">
+      <path d="M165 42L330 445"/><path d="M235 48L365 490"/><path d="M315 38L390 475"/>
+      <path d="M408 42L420 495" stroke-width="1"/><path d="M432 42L428 495" stroke-width="1"/>
+      <path d="M480 42L438 485"/><path d="M555 52L462 448"/><path d="M625 65L495 410"/><path d="M690 82L535 370"/>
+    </g>
+
+    <g id="Sample points" fill="#F4B860" stroke="#071014" stroke-width="1">
+      <circle cx="173" cy="61" r="2.5"/><circle cx="196" cy="118" r="2.5"/><circle cx="220" cy="176" r="2.5"/><circle cx="243" cy="233" r="2.5"/><circle cx="266" cy="291" r="2.5"/><circle cx="290" cy="348" r="2.5"/><circle cx="313" cy="405" r="2.5"/>
+      <circle cx="241" cy="67" r="2.5"/><circle cx="257" cy="124" r="2.5"/><circle cx="274" cy="182" r="2.5"/><circle cx="291" cy="239" r="2.5"/><circle cx="308" cy="296" r="2.5"/><circle cx="325" cy="354" r="2.5"/><circle cx="342" cy="411" r="2.5"/><circle cx="359" cy="469" r="2.5"/>
+      <circle cx="318" cy="58" r="2.5"/><circle cx="328" cy="117" r="2.5"/><circle cx="339" cy="176" r="2.5"/><circle cx="349" cy="235" r="2.5"/><circle cx="359" cy="294" r="2.5"/><circle cx="369" cy="353" r="2.5"/><circle cx="380" cy="412" r="2.5"/><circle cx="388" cy="455" r="2.5"/>
+      <circle cx="409" cy="62" r="2.5"/><circle cx="411" cy="122" r="2.5"/><circle cx="413" cy="182" r="2.5"/><circle cx="414" cy="242" r="2.5"/><circle cx="416" cy="302" r="2.5"/><circle cx="417" cy="362" r="2.5"/><circle cx="419" cy="422" r="2.5"/><circle cx="420" cy="482" r="2.5"/>
+      <circle cx="432" cy="62" r="2.5"/><circle cx="432" cy="122" r="2.5"/><circle cx="431" cy="182" r="2.5"/><circle cx="431" cy="242" r="2.5"/><circle cx="430" cy="302" r="2.5"/><circle cx="429" cy="362" r="2.5"/><circle cx="429" cy="422" r="2.5"/><circle cx="428" cy="482" r="2.5"/>
+      <circle cx="478" cy="62" r="2.5"/><circle cx="472" cy="122" r="2.5"/><circle cx="466" cy="182" r="2.5"/><circle cx="461" cy="241" r="2.5"/><circle cx="455" cy="301" r="2.5"/><circle cx="449" cy="361" r="2.5"/><circle cx="444" cy="421" r="2.5"/><circle cx="439" cy="477" r="2.5"/>
+      <circle cx="550" cy="71" r="2.5"/><circle cx="536" cy="130" r="2.5"/><circle cx="522" cy="188" r="2.5"/><circle cx="508" cy="247" r="2.5"/><circle cx="494" cy="305" r="2.5"/><circle cx="480" cy="364" r="2.5"/><circle cx="466" cy="423" r="2.5"/>
+      <circle cx="618" cy="84" r="2.5"/><circle cx="596" cy="140" r="2.5"/><circle cx="574" cy="196" r="2.5"/><circle cx="552" cy="252" r="2.5"/><circle cx="530" cy="309" r="2.5"/><circle cx="508" cy="365" r="2.5"/>
+      <circle cx="681" cy="101" r="2.5"/><circle cx="660" cy="157" r="2.5"/><circle cx="638" cy="213" r="2.5"/><circle cx="617" cy="269" r="2.5"/><circle cx="596" cy="325" r="2.5"/><circle cx="575" cy="381" r="2.5"/>
+    </g>
+
+    <g id="Map labels">
+      <text class="label" x="118" y="80">PALEOSURFACE</text>
+      <text class="label" x="118" y="105">WATER TABLE</text>
+      <text class="label" x="112" y="222">BOILING LEVEL</text>
+      <text class="label small" x="12" y="142">100°C</text><text class="label small" x="12" y="222">150°C</text><text class="label small" x="12" y="294">200°C</text><text class="label small" x="12" y="475">300°C</text>
+      <text class="label" x="92" y="205" transform="rotate(90 92 205)">PROPYLITIC</text>
+      <text class="label" x="698" y="205" transform="rotate(90 698 205)">PROPYLITIC</text>
+      <text class="label" x="310" y="190" transform="rotate(90 310 190)">ARGILLIC</text>
+      <text class="label" x="490" y="190" transform="rotate(90 490 190)">ARGILLIC</text>
+      <text class="label" x="370" y="300" transform="rotate(90 370 300)">SERICITIC</text>
+      <text class="label" x="450" y="300" transform="rotate(90 450 300)">SERICITIC</text>
+      <text class="label" x="400" y="250" transform="rotate(90 400 250)">ADV. ARG.</text>
+      <text class="label" x="440" y="250" transform="rotate(90 440 250)">ADV. ARG.</text>
+      <text class="label" x="408" y="185" transform="rotate(90 408 185)">SILICIFICATION</text>
+      <text class="label" x="424" y="275" transform="rotate(90 424 275)">Au–Cu ORE</text>
+      <text class="label" x="210" y="122">CHALCEDONY BLANKET</text>
+      <text class="label" x="215" y="70">STEAM-HEATED CAP</text>
+      <text class="label" x="757" y="112">UPPER</text><text class="label" x="757" y="285">MIDDLE</text><text class="label" x="757" y="465">LOWER</text>
+    </g>
+
+    <g id="Scale and orientation">
+      <text class="label small" x="745" y="-12">N</text><path d="M760 -15H805" stroke="#819197"/><text class="label small" x="812" y="-12">S</text>
+      <text class="label small" x="725" y="545">0</text><path d="M740 540H818M740 540V548M818 540V548" stroke="#26362E" stroke-width="2"/><text class="label small" x="825" y="545">100 m</text>
+    </g>
+  </g>
+
+  <g id="Legend box" transform="translate(905 85)" filter="url(#softShadow)">
+    <rect width="185" height="500" rx="14" fill="#FFFFFF" stroke="#D5DDD7"/>
+    <text class="legendSmall" x="18" y="32">MAP KEY</text>
+    <text class="legendText" x="18" y="58" font-size="20">Legend</text>
+    <path d="M18 75H167" stroke="#D5DDD7"/>
+    <g class="legendText" font-size="12">
+      <g transform="translate(18 100)"><rect width="18" height="5" rx="2" fill="#EF9B68"/><rect y="8" width="18" height="5" rx="2" fill="#DCCB74"/><rect y="16" width="18" height="5" rx="2" fill="#7EA867"/><text x="36" y="14">Material layers</text></g>
+      <g transform="translate(18 145)"><path d="M0 8H26" stroke="#171C1E" stroke-width="4" stroke-linecap="round"/><text x="36" y="12">Faults</text></g>
+      <g transform="translate(18 185)"><path d="M0 8H26" stroke="#DB4639" stroke-width="3" stroke-linecap="round"/><text x="36" y="12">Hydrothermal veins</text></g>
+      <g transform="translate(18 225)"><path d="M0 8H30" stroke="#60737A" stroke-width="3" stroke-dasharray="6 4"/><text x="36" y="12">Drillhole traces</text></g>
+      <g transform="translate(18 265)"><circle cx="10" cy="8" r="6" fill="#F4B860" stroke="#071014" stroke-width="2"/><text x="36" y="12">Sample points</text></g>
+      <g transform="translate(18 305)"><text x="3" y="13" font-family="DM Mono,monospace" font-size="18" font-weight="700" fill="#17211D">T</text><text x="36" y="12">Map labels</text></g>
+      <g transform="translate(18 345)"><path d="M0 8H30" stroke="#26B9C6" stroke-width="3" stroke-dasharray="4 5"/><text x="36" y="12">Water levels</text></g>
+    </g>
+  </g>
+</svg>

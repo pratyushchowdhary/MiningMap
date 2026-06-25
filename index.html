@@ -53,29 +53,27 @@
               <linearGradient id="rock" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#334047"/><stop offset="1" stop-color="#182126"/></linearGradient>
               <filter id="glow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
             </defs>
-            <rect width="800" height="520" fill="url(#grid)" pointer-events="none"/>
-            <path d="M0 70Q95 40 180 66Q255 83 330 57Q420 25 500 64Q600 80 800 53V520H0Z" fill="#d8d4c8"/>
-            <path class="zone" data-zone="Propylitic" d="M34 70Q108 52 180 68L268 167Q300 240 315 320L337 520H38ZM800 54Q646 77 530 65L502 150Q482 235 480 325L465 520H800Z"/>
-            <path class="zone" data-zone="Argillic" d="M235 70L285 120L315 220L330 320L350 520H395L385 320L370 220L350 120L320 70ZM565 70L480 70L450 120L430 220L415 320L405 520H450L470 320L485 220L515 120Z"/>
-            <path class="zone" data-zone="Sericitic" d="M320 70L350 120L370 220L385 320L395 520H410L405 320L392 220L378 120L360 70ZM480 70L440 70L422 120L408 220L395 320L390 520H405L415 320L430 220L450 120Z"/>
-            <path class="zone" data-zone="Advanced argillic" d="M360 70L378 120L392 220L405 320L410 520H416L410 390L416 300L408 230L400 180L400 120L390 70ZM440 70L430 70L420 120L420 180L412 230L420 300L414 390L416 520H422L425 320L438 220L422 120Z"/>
-            <path class="zone" data-zone="Silicification" d="M390 70L400 120L400 180L408 230L416 300L410 390L416 500L410 500L404 390L410 300L402 230L404 180L402 120L410 75ZM430 75L438 120L436 180L440 230L432 300L438 390L430 500H422L428 390L422 300L430 230L420 180L420 120Z"/>
-            <path class="zone" data-zone="Steam-heated cap" d="M112 56Q226 32 330 58Q375 34 419 50Q455 35 563 61L552 91Q476 78 418 82Q339 79 132 91Z"/>
-            <path class="zone" data-zone="Chalcedony blanket" d="M132 104Q251 93 337 105Q366 91 392 104L399 128Q310 119 220 136L155 132ZM419 101Q447 91 473 105Q526 93 552 104L535 131L465 133L426 124Z"/>
-            <path class="zone" data-zone="Ore zone" d="M410 75L430 75L438 120L436 180L440 230L432 300L438 390L430 500H416L410 390L416 300L408 230L412 180L408 120Z"/>
-            <g class="faults"><path d="M391 86L420 495"/><path d="M445 83L429 497"/><path d="M359 108L414 455"/><path d="M477 103L442 454"/></g>
-            <g class="veinlets"><path d="M405 158L369 133"/><path d="M409 181L367 193"/><path d="M414 211L362 246"/><path d="M420 244L387 284"/><path d="M428 275L399 316"/><path d="M434 311L408 349"/><path d="M442 348L422 392"/><path d="M432 150L466 122"/><path d="M435 186L478 193"/><path d="M440 221L482 252"/><path d="M435 251L469 293"/><path d="M434 283L461 325"/></g>
+            <path class="zone" data-zone="Propylitic" d="M 34 70 C 83.3333 58 65 48.8333 113 59.5 L 135 88 L 157 115 H 200.5 L 232.5 176.5 C 265.5 221 277 272.167 287 325.5 L 325 520 H 38 L 34 70Z M 800 54 C 733 60.5 773 54 698.5 68 L 647 147.5 C 603.5 193.5 587.5 313 546 387.5 L 542.5 463.5 L 565 520 H 800 V 54Z"/>
+            <path class="zone" data-zone="Argillic" d="M 198 118.155 L 202.392 122.191 L 259.982 221.643 L 288.777 321.095 L 327.17 520 H 371.672 L 346.647 482.249 L 354.155 430.99 L 346.647 340.685 L 322.123 281.575 L 317.619 229.42 L 273.296 127.66 L 258.56 115.175 L 231.033 118.155 H 198Z M 702 69.9737 L 653.616 66 L 590.04 103.792 L 529.302 217.665 L 510.57 344.467 V 430.99 L 516.814 477.235 L 500.353 520 H 564.496 L 540.088 457.345 L 545.196 387.231 L 577.552 321.095 L 610.409 209.055 L 667.966 122.191 L 702 69.9737Z"/>
+            <path class="zone" data-zone="Sericitic" d="M 261 116.473 L 276 137.588 L 319 241.087 L 322.75 283.449 L 346.5 339.108 L 354.5 429.554 L 346.5 483.722 L 371.5 520 H 382.5 L 367.5 478.256 L 375.5 402.222 L 371.5 321.218 L 354.5 275.001 V 241.087 L 339.5 145.793 L 331 112 L 261 116.473Z M 584 116.473 H 510 L 499 137.588 L 483 201.5 L 476 294 L 471.5 379 L 492.5 473.5 L 483 520 H 499 L 520 478.256 L 510 429.554 V 339.108 L 533 206.5 L 574 131.271 L 584 116.473Z"/>
+            <path class="zone" data-zone="Advanced argillic" d="M 365.27 109 L 333 112.487 L 347.894 192.695 L 355.564 248.491 V 274.895 L 369.64 321.724 L 375.353 427.338 L 365.27 478.651 L 375.353 497.582 L 378.674 520 C 392.749 520 383.142 520 383.142 520 V 492.6 L 387.764 460.716 L 403 416.876 V 368.553 L 397.043 274.895 L 393.099 211.625 L 365.27 150.847 V 109Z M 504.5 118.5 L 475.246 116 L 465 162 V 229.5 L 461.07 280 L 453.5 338 V 398 L 470 443 L 475.246 480 L 461.07 519.5 C 475.246 519.5 481 519.5 481 519.5 L 493.5 474.5 L 470 375.5 L 481 259 V 212 L 487.06 172.5 L 504.5 118.5Z"/>
+            <path class="zone" data-zone="Silicification" d="M 426 110.5 L 416 118 L 413.5 129 L 409.1 142.5 L 413.5 212.288 L 409.1 260.368 L 417.5 328.641 L 413.5 433.456 L 395.9 488.748 L 400.3 519.519 H 381 L 385 463.746 L 400.3 414.224 V 327.68 L 395.9 260.368 V 212.288 L 365 149.303 V 105.976 L 426 110.5Z M 475 112.935 L 467 154.592 V 212.288 L 461.9 260.368 L 453 332.124 V 394.252 L 467 437.493 L 475 476.247 L 471 505 L 461.9 520 H 453 L 457.5 505 V 476.247 L 439.9 414.224 L 435.5 357.489 V 322.391 L 439.9 265.657 L 435.5 212.288 L 439.9 179.593 V 133.5 L 438 120 L 436 111.5 L 449 112.935 H 475Z"/>
+            <path class="zone" data-zone="Steam-heated cap" d="M 112 56.2954 C 196.931 40.4304 278.137 41.0914 355.619 58.2785 C 389.144 42.4135 422.297 39.7693 455.078 50.346 C 481.898 40.4304 571.039 51.8129 651.5 69 L 603.707 91 C 547.086 82.406 497.171 79.432 453.96 82.076 C 395.104 80.093 288.568 83.068 134.35 91 L 112 56.2954Z"/>
+            <path class="zone" data-zone="Chalcedony blanket" d="M 132 87.136 C 220.778 79.834 283.341 76.183 347.5 84.149 C 369.135 74.8553 417.27 78.506 436.667 87.136 L 444.5 111.034 C 378.103 105.06 297.619 107.715 230.476 119 L 157.738 115.017 L 132 87.136Z M 430.786 84.149 C 451.675 77.5106 495.103 74.8553 514.5 84.149 C 554.04 76.183 595.103 85.198 614.5 92.5 L 582.976 114.021 L 504.643 116.013 L 444.5 111.034 L 430.786 84.149Z"/>
+            <path class="zone" data-zone="Ore zone" d="M 427 110.5 L 434.5 111.5 L 437.5 113 V 118 L 439 142.265 L 441 182.523 V 251.609 L 437 321.192 L 439 410.656 L 454.5 443.459 L 459 482.723 L 454.5 505.586 V 520 H 426.75 H 399 L 393 490.676 L 413 434.016 L 417 321.192 L 409 251.609 L 413 201.907 L 409 142.265 L 417.5 118 L 427 110.5Z"/>
+            <g class="faults"><path d="M360 96L405 500"/><path d="M452 95L430 500"/><path d="M315 138L372 430"/><path d="M515 132L458 428"/></g>
+            <g class="veinlets"><path d="M392 142L425 170"/><path d="M382 178L424 190"/><path d="M377 218L418 205"/><path d="M382 248L420 232"/><path d="M390 292L421 270"/><path d="M405 330L428 300"/><path d="M418 378L434 335"/><path d="M450 145L484 118"/><path d="M448 185L492 198"/><path d="M446 224L498 255"/><path d="M444 265L488 315"/><path d="M440 306L475 368"/><path d="M435 352L458 430"/></g>
             <path class="water-table" d="M80 100H727"/>
-            <g class="surface-features"><text x="118" y="80">PALEOSURFACE</text><text x="118" y="105">WATER TABLE</text></g>
+            <g class="surface-features"><text x="118" y="78">PALEOSURFACE</text><text x="98" y="105">WATER TABLE</text></g>
             <g class="boiling-level"><path d="M80 218H330"/><text x="112" y="222">BOILING LEVEL</text></g>
             <g class="temperature"><text x="12" y="142">100°C</text><text x="12" y="222">150°C</text><text x="12" y="294">200°C</text><text x="12" y="475">300°C</text></g>
             <g class="system-levels"><text x="757" y="112">UPPER</text><text x="757" y="285">MIDDLE</text><text x="757" y="465">LOWER</text><path d="M746 121h32M746 314h32"/></g>
             <g class="custom-layers" id="customLayers"></g>
             <g class="draw-preview" id="drawPreview"></g>
-            <g class="drillholes" id="drillholes"><path d="M165 42L330 445"/><path d="M235 48L365 490"/><path d="M315 38L390 475"/><path class="center-trace" d="M408 42L420 495"/><path class="center-trace" d="M432 42L428 495"/><path d="M480 42L438 485"/><path d="M555 52L462 448"/><path d="M625 65L495 410"/><path d="M690 82L535 370"/></g>
+            <g class="drillholes" id="drillholes"><path d="M165 42L330 445"/><path d="M235 48L365 490"/><path d="M315 38L390 475"/><path d="M365 42L410 500"/><path d="M408 42L420 495"/><path d="M432 42L428 495"/><path d="M480 42L438 485"/><path d="M555 52L462 448"/><path d="M625 65L495 410"/><path d="M690 82L535 370"/></g>
             <g class="samples" id="samples"></g>
             <g class="markings" id="markings"></g>
-            <g class="labels"><text data-label-zone="Propylitic" x="92" y="205" transform="rotate(90 92 205)">PROPYLITIC</text><text data-label-zone="Propylitic" x="698" y="205" transform="rotate(90 698 205)">PROPYLITIC</text><text data-label-zone="Argillic" x="310" y="190" transform="rotate(90 310 190)">ARGILLIC</text><text data-label-zone="Argillic" x="490" y="190" transform="rotate(90 490 190)">ARGILLIC</text><text data-label-zone="Sericitic" x="370" y="300" transform="rotate(90 370 300)">SERICITIC</text><text data-label-zone="Sericitic" x="450" y="300" transform="rotate(90 450 300)">SERICITIC</text><text data-label-zone="Advanced argillic" x="400" y="250" transform="rotate(90 400 250)">ADV. ARG.</text><text data-label-zone="Advanced argillic" x="440" y="250" transform="rotate(90 440 250)">ADV. ARG.</text><text data-label-zone="Silicification" x="408" y="185" transform="rotate(90 408 185)">SILICIFICATION</text><text data-label-zone="Ore zone" x="424" y="275" transform="rotate(90 424 275)">Au–Cu ORE</text><text data-label-zone="Chalcedony blanket" x="210" y="122">CHALCEDONY BLANKET</text><text data-label-zone="Steam-heated cap" x="215" y="70">STEAM-HEATED CAP</text></g>
+            <g class="labels"></g>
             <g class="preset-handles" id="presetHandles"></g>
           </svg>
           <div class="orientation"><span>N</span><i></i><span>S</span></div>
@@ -140,6 +138,28 @@
   <dialog id="categoryDialog"><form method="dialog"><div class="dialog-head"><div><span class="eyebrow">NEW LEGEND CATEGORY</span><h2>Add mapping category</h2></div><button value="cancel" class="icon-btn">×</button></div><label>Name<input id="categoryName" placeholder="e.g. Drill holes"></label><label>Category type<select id="categoryType"><option value="mineral">Mineral layer</option><option value="marking">Map marking</option></select></label><label id="geometryField">Geometry<select id="categoryGeometry"><option value="point">Point</option><option value="line">Line</option><option value="area">Area</option><option value="text">Text</option></select></label><label>Symbol / style<select id="categorySymbol"></select></label><label>Colour<input id="categoryColor" type="color" value="#7c5cff"></label><div class="dialog-actions"><button value="cancel" class="btn ghost">Cancel</button><button type="button" class="btn primary" id="saveCategory">Add category</button></div></form></dialog>
   <dialog id="sampleDialog"><form method="dialog"><div class="dialog-head"><div><span class="eyebrow">SAMPLE</span><h2 id="sampleDialogTitle">View sample report</h2></div><button value="cancel" class="icon-btn">×</button></div><p id="sampleDialogName"></p><label id="sampleLinkField" hidden>Sample report link<input id="sampleReportLink" type="url" placeholder="https://…"></label><div class="dialog-actions"><button value="cancel" class="btn ghost">Close</button><button type="button" class="btn primary" id="sampleDialogAction">View sample report</button></div></form></dialog>
   <dialog id="objectNameDialog"><form method="dialog"><div class="dialog-head"><div><span class="eyebrow" id="objectDialogEyebrow">MAP POINT</span><h2 id="objectDialogTitle">Name this point</h2></div><button value="cancel" class="icon-btn">×</button></div><label><span id="objectDialogLabel">Point name</span><input id="newObjectName" required></label><div class="dialog-actions"><button value="cancel" class="btn ghost">Cancel</button><button type="button" class="btn primary" id="confirmObjectName">Continue</button></div></form></dialog>
-  <script src="app.js"></script>
+  <script>
+    window.defaultMapReady = (async () => {
+      const currentMap = document.querySelector('#geoMap');
+      if (!currentMap || location.protocol === 'file:') return;
+      try {
+        const response = await fetch('default-map.svg', { cache: 'no-cache' });
+        if (!response.ok) throw new Error(`Map SVG failed: ${response.status}`);
+        const template = document.createElement('template');
+        template.innerHTML = (await response.text()).trim();
+        const editableMap = template.content.querySelector('svg#geoMap');
+        if (editableMap) currentMap.replaceWith(editableMap);
+      } catch (error) {
+        console.warn('Using inline default map fallback.', error);
+      }
+    })();
+  </script>
+  <script>
+    window.defaultMapReady.finally(() => {
+      const app = document.createElement('script');
+      app.src = 'app.js';
+      document.body.appendChild(app);
+    });
+  </script>
 </body>
 </html>
