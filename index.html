@@ -47,35 +47,201 @@
         </div>
         <div class="map-stage" id="mapStage">
           <div class="depth-axis"><span>0 m</span><span>−200</span><span>−400</span><span>−600</span><span>−800</span><span>−900</span></div>
-          <svg id="geoMap" viewBox="0 0 800 520" role="img" aria-label="Interactive geological cross section">
-            <defs>
-              <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#365247" stroke-width=".45" opacity=".28"/></pattern>
-              <linearGradient id="rock" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#334047"/><stop offset="1" stop-color="#182126"/></linearGradient>
-              <filter id="glow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-            </defs>
-            <path class="zone" data-zone="Propylitic" d="M 34 70 C 83.3333 58 65 48.8333 113 59.5 L 135 88 L 157 115 H 200.5 L 232.5 176.5 C 265.5 221 277 272.167 287 325.5 L 325 520 H 38 L 34 70Z M 800 54 C 733 60.5 773 54 698.5 68 L 647 147.5 C 603.5 193.5 587.5 313 546 387.5 L 542.5 463.5 L 565 520 H 800 V 54Z"/>
-            <path class="zone" data-zone="Argillic" d="M 198 118.155 L 202.392 122.191 L 259.982 221.643 L 288.777 321.095 L 327.17 520 H 371.672 L 346.647 482.249 L 354.155 430.99 L 346.647 340.685 L 322.123 281.575 L 317.619 229.42 L 273.296 127.66 L 258.56 115.175 L 231.033 118.155 H 198Z M 702 69.9737 L 653.616 66 L 590.04 103.792 L 529.302 217.665 L 510.57 344.467 V 430.99 L 516.814 477.235 L 500.353 520 H 564.496 L 540.088 457.345 L 545.196 387.231 L 577.552 321.095 L 610.409 209.055 L 667.966 122.191 L 702 69.9737Z"/>
-            <path class="zone" data-zone="Sericitic" d="M 261 116.473 L 276 137.588 L 319 241.087 L 322.75 283.449 L 346.5 339.108 L 354.5 429.554 L 346.5 483.722 L 371.5 520 H 382.5 L 367.5 478.256 L 375.5 402.222 L 371.5 321.218 L 354.5 275.001 V 241.087 L 339.5 145.793 L 331 112 L 261 116.473Z M 584 116.473 H 510 L 499 137.588 L 483 201.5 L 476 294 L 471.5 379 L 492.5 473.5 L 483 520 H 499 L 520 478.256 L 510 429.554 V 339.108 L 533 206.5 L 574 131.271 L 584 116.473Z"/>
-            <path class="zone" data-zone="Advanced argillic" d="M 365.27 109 L 333 112.487 L 347.894 192.695 L 355.564 248.491 V 274.895 L 369.64 321.724 L 375.353 427.338 L 365.27 478.651 L 375.353 497.582 L 378.674 520 C 392.749 520 383.142 520 383.142 520 V 492.6 L 387.764 460.716 L 403 416.876 V 368.553 L 397.043 274.895 L 393.099 211.625 L 365.27 150.847 V 109Z M 504.5 118.5 L 475.246 116 L 465 162 V 229.5 L 461.07 280 L 453.5 338 V 398 L 470 443 L 475.246 480 L 461.07 519.5 C 475.246 519.5 481 519.5 481 519.5 L 493.5 474.5 L 470 375.5 L 481 259 V 212 L 487.06 172.5 L 504.5 118.5Z"/>
-            <path class="zone" data-zone="Silicification" d="M 426 110.5 L 416 118 L 413.5 129 L 409.1 142.5 L 413.5 212.288 L 409.1 260.368 L 417.5 328.641 L 413.5 433.456 L 395.9 488.748 L 400.3 519.519 H 381 L 385 463.746 L 400.3 414.224 V 327.68 L 395.9 260.368 V 212.288 L 365 149.303 V 105.976 L 426 110.5Z M 475 112.935 L 467 154.592 V 212.288 L 461.9 260.368 L 453 332.124 V 394.252 L 467 437.493 L 475 476.247 L 471 505 L 461.9 520 H 453 L 457.5 505 V 476.247 L 439.9 414.224 L 435.5 357.489 V 322.391 L 439.9 265.657 L 435.5 212.288 L 439.9 179.593 V 133.5 L 438 120 L 436 111.5 L 449 112.935 H 475Z"/>
-            <path class="zone" data-zone="Steam-heated cap" d="M 112 56.2954 C 196.931 40.4304 278.137 41.0914 355.619 58.2785 C 389.144 42.4135 422.297 39.7693 455.078 50.346 C 481.898 40.4304 571.039 51.8129 651.5 69 L 603.707 91 C 547.086 82.406 497.171 79.432 453.96 82.076 C 395.104 80.093 288.568 83.068 134.35 91 L 112 56.2954Z"/>
-            <path class="zone" data-zone="Chalcedony blanket" d="M 132 87.136 C 220.778 79.834 283.341 76.183 347.5 84.149 C 369.135 74.8553 417.27 78.506 436.667 87.136 L 444.5 111.034 C 378.103 105.06 297.619 107.715 230.476 119 L 157.738 115.017 L 132 87.136Z M 430.786 84.149 C 451.675 77.5106 495.103 74.8553 514.5 84.149 C 554.04 76.183 595.103 85.198 614.5 92.5 L 582.976 114.021 L 504.643 116.013 L 444.5 111.034 L 430.786 84.149Z"/>
-            <path class="zone" data-zone="Ore zone" d="M 427 110.5 L 434.5 111.5 L 437.5 113 V 118 L 439 142.265 L 441 182.523 V 251.609 L 437 321.192 L 439 410.656 L 454.5 443.459 L 459 482.723 L 454.5 505.586 V 520 H 426.75 H 399 L 393 490.676 L 413 434.016 L 417 321.192 L 409 251.609 L 413 201.907 L 409 142.265 L 417.5 118 L 427 110.5Z"/>
-            <g class="faults"><path d="M360 96L405 500"/><path d="M452 95L430 500"/><path d="M315 138L372 430"/><path d="M515 132L458 428"/></g>
-            <g class="veinlets"><path d="M392 142L425 170"/><path d="M382 178L424 190"/><path d="M377 218L418 205"/><path d="M382 248L420 232"/><path d="M390 292L421 270"/><path d="M405 330L428 300"/><path d="M418 378L434 335"/><path d="M450 145L484 118"/><path d="M448 185L492 198"/><path d="M446 224L498 255"/><path d="M444 265L488 315"/><path d="M440 306L475 368"/><path d="M435 352L458 430"/></g>
-            <path class="water-table" d="M80 100H727"/>
-            <g class="surface-features"><text x="118" y="78">PALEOSURFACE</text><text x="98" y="105">WATER TABLE</text></g>
-            <g class="boiling-level"><path d="M80 218H330"/><text x="112" y="222">BOILING LEVEL</text></g>
-            <g class="temperature"><text x="12" y="142">100°C</text><text x="12" y="222">150°C</text><text x="12" y="294">200°C</text><text x="12" y="475">300°C</text></g>
-            <g class="system-levels"><text x="757" y="112">UPPER</text><text x="757" y="285">MIDDLE</text><text x="757" y="465">LOWER</text><path d="M746 121h32M746 314h32"/></g>
-            <g class="custom-layers" id="customLayers"></g>
-            <g class="draw-preview" id="drawPreview"></g>
-            <g class="drillholes" id="drillholes"><path d="M165 42L330 445"/><path d="M235 48L365 490"/><path d="M315 38L390 475"/><path d="M365 42L410 500"/><path d="M408 42L420 495"/><path d="M432 42L428 495"/><path d="M480 42L438 485"/><path d="M555 52L462 448"/><path d="M625 65L495 410"/><path d="M690 82L535 370"/></g>
-            <g class="samples" id="samples"></g>
-            <g class="markings" id="markings"></g>
-            <g class="labels"></g>
-            <g class="preset-handles" id="presetHandles"></g>
-          </svg>
+          <svg id="geoMap" viewBox="0 0 800 520" role="img" aria-label="Editable mineral alteration cross-section" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="labelHalo" x="-20%" y="-20%" width="140%" height="140%"><feFlood flood-color="rgba(255,255,255,.72)" result="bg"/><feComposite in="bg" in2="SourceAlpha" operator="in" result="halo"/><feMerge><feMergeNode in="halo"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <g id="mapCanvas">
+    <g class="grid-underlay" pointer-events="none"></g>
+    <g id="zones" class="zones">
+      <path id="Propylitic" class="zone" d="M34 70C83.3333 58 65 48.8333 113 59.5L135 88L157 115L184 128.5L232.5 176.5C265.5 221 277 272.167 287 325.5L325 520H38L34 70ZM800 54C733 60.5 777.5 55 703 69L647 147.5C603.5 193.5 587.5 313 546 387.5V465L565 520H800V54Z" fill="#7EA867" opacity="0.88" data-zone="Propylitic" data-minerals="Chlorite, Epidote, Calcite, Albite" data-note="Broad chlorite–epidote alteration halo with patchy carbonate veining."/>
+<path id="Argillic" class="zone" d="M160 115.175L185 130L228.5 171.5L259.982 221.643L285.5 321.095L322.123 520H371.672L356 480L354.155 430.99L346.647 340.685L322.123 281.575L319 241L271 130L258.56 115.175L231.033 118.155L160 115.175ZM702 69.9738L639 91L584 117L554.5 167.5L529.302 217.665L510.57 344.467V430.99L521.5 500V520H564.496L549.5 467L545.196 387.231L577.552 321.095L610.409 209.055L667.966 122.191L702 69.9738Z" fill="#DCCB74" opacity="0.88" data-zone="Argillic" data-minerals="Kaolinite, Illite, Smectite, Pyrite" data-note="Clay-rich alteration concentrated above and lateral to the hot structural core."/>
+<path id="Sericitic" class="zone" d="M260 115.5L276 137.588L319 241.087L322.75 283.449L346.5 339.108L354.5 429.554C354.5 429.554 353 471 356 480.5C359 490 371.5 520 371.5 520H382.5L367.5 478.256L375.5 402.222L371.5 321.218L354.5 275.001V241.087L339.5 145.793L331.5 109.5L295 111.5L260 115.5ZM621 98.5L612 93.5L596.5 88L584 86L579 94.5L553 109.5L510 116.473L499 137.588L483 201.5L476 294L471.5 379L492.5 473.5L497 520H520V502V478.256L510 429.554V339.108L533 206.5L574 131.271L584 116.473L604 108L621 98.5Z" fill="#EAD7BD" opacity="0.88" data-zone="Sericitic" data-minerals="Sericite, Adularia, Quartz, Pyrite" data-note="Sericite-adularia-quartz corridor flanking the feeder structure."/>
+<path id="Advanced argillic" class="zone" d="M365.27 109H332.5L347.894 192.695L355.564 248.491V274.895L369.64 321.724L372.5 428.5L368.5 478.5L375.353 497.582L382 520C396.075 520 383.142 520 383.142 520V492.6L387.764 460.716L403 416.876V368.553L397.043 274.895L393.099 211.625L365.27 150.847V109ZM508.5 116L476.5 113.5L465 162V229.5L461.07 280L453.5 338V398L470 443L475.246 480L477.5 520C491.676 520 496.5 519.5 496.5 519.5L493.5 474.5L470 375.5L481 259V212L490 173L508.5 116Z" fill="#EF9B68" opacity="0.88" data-zone="Advanced argillic" data-minerals="Alunite, Pyrophyllite, Diaspore, Quartz" data-note="High-temperature alunite–pyrophyllite alteration focused on the feeder structure."/>
+<path id="Silicification" class="zone" d="M426 110.5L416 118L413.5 129L409.1 142.5L413.5 212.288L409.1 260.368L417.5 328.641L413.5 433.456L395.9 488.748L393 519.519H384L385 463.746L400.3 414.224V327.68L395.9 260.368L392.5 212.288L365 149.303V108L426 110.5ZM475 112.935L467 154.592V212.288L461.9 260.368L453 332.124V394.252L469 445.5L475 476.247L477 505V520L462.5 519.519V510.5L457.5 476.247L453 445.5L443 399L435.5 357.489V322.391L439.9 265.657L435.5 212.288L439.9 179.593V133.5L438 120L436 111.5L449 112.935H475Z" fill="#6EB9C9" opacity="0.88" data-zone="Silicification" data-minerals="Vuggy silica, Quartz, Chalcedony, Pyrite" data-note="Residual vuggy silica cap and steep quartz-rich feeder above the boiling level."/>
+<path id="Ore zone" class="zone" d="M427 111.5H434.5L437.5 113V118L439 142.265L441 182.523V251.609L437 321.192L442.5 396.5L454.5 443.459L459 482.723L462.5 506.5V520H426.75H393V490.676L413 434.016L417 321.192L409 251.609L413 201.907L409 142.265L417.5 118L427 111.5Z" fill="#E64D3F" opacity="0.88" data-zone="Ore zone" data-minerals="Enargite, Pyrite, Covellite, Native Au" data-note="Gold–copper mineralized core along the central feeder."/>
+<path id="Steam-heated cap" class="zone" d="M113.5 59.5C198.431 43.635 278.137 41.0914 355.619 58.2785C389.144 42.4135 422.297 39.7693 455.078 50.346C481.898 40.4304 617.039 53.3129 697.5 70.5L621.5 99C603.473 86.0853 557 75.5 515 83C481.5 73 443.664 78.6883 430.5 84C407.5 81.5 408.5 78.5 346.5 81.5C314.826 80.3971 301.627 75.7368 257.5 77C227.513 77.8585 172.326 85.1059 135.5 87C131.798 83.7097 127.472 78.7675 123.5 73.5C117.815 65.9602 113.5 59.5 113.5 59.5Z" fill="#E7CF55" opacity="0.88" data-zone="Steam-heated cap" data-minerals="Kaolinite, Opal, Alunite, Native S" data-note=""/>
+<path id="Chalcedony blanket" class="zone" d="M132 87.1361C171.096 83.9204 206.914 79.9772 238 78.5C277.503 76.6229 310.595 78.0421 346.5 82.5C366 80.5001 372.525 81.2262 386.5 81.5001C407.045 81.9026 425.123 81.9999 436.667 87.1361L444.5 111.034C378.103 105.06 297.619 107.715 230.476 119L157.738 115.017L132 87.1361ZM430.786 84.1491C451.675 77.5107 495.103 74.8554 514.5 84.1491C554.04 76.1831 563.5 83 583 85.5L578.5 94L556.5 107.5L504.643 116.013L444.5 111.034L430.786 84.1491Z" fill="#B7A2CA" opacity="0.88" data-zone="Chalcedony blanket" data-minerals="Chalcedony, Quartz, Adularia" data-note=""/>
+<path class="layer-outline" d="M346.5 81.5C314.826 80.3971 301.627 75.7368 257.5 77C227.513 77.8585 172.326 85.1059 135.5 87C131.798 83.7097 127.472 78.7675 123.5 73.5C117.815 65.9602 113.5 59.5 113.5 59.5C198.431 43.635 278.137 41.0914 355.619 58.2785C389.144 42.4135 422.297 39.7693 455.078 50.346C481.898 40.4304 617.039 53.3129 697.5 70.5L621.5 99C603.473 86.0853 557 75.5 515 83C481.5 73 443.664 78.6883 430.5 84C407.5 81.5 408.5 78.5 346.5 81.5ZM257.5 77L346.5 81.5" fill="none" stroke="#9AABAE" stroke-width="1.3" pointer-events="none"/>
+<path class="layer-outline" d="M444.5 111.034L436.667 87.1361C425.123 81.9999 407.045 81.9026 386.5 81.5001C372.525 81.2262 366 80.5001 346.5 82.5C310.595 78.0421 277.503 76.6229 238 78.5C206.914 79.9772 171.096 83.9204 132 87.1361L157.738 115.017L230.476 119C297.619 107.715 378.103 105.06 444.5 111.034ZM444.5 111.034L504.643 116.013L556.5 107.5L578.5 94L583 85.5C563.5 83 554.04 76.1831 514.5 84.1491C495.103 74.8554 451.675 77.5107 430.786 84.1491L444.5 111.034Z" fill="none" stroke="#9AABAE" stroke-width="1.3" pointer-events="none"/>
+    </g>
+    <g class="faults" id="faults"><path class="fault" d="M359 120L414 430" fill="none" stroke="#171C1E" stroke-width="2" opacity="0.8" data-category="faults"/>
+<path class="fault" d="M470 118L435 430" fill="none" stroke="#171C1E" stroke-width="2" opacity="0.8" data-category="faults"/>
+<path class="fault" d="M320 158L370 398" fill="none" stroke="#171C1E" stroke-width="2" opacity="0.8" data-category="faults"/>
+<path class="fault" d="M535 145L475 392" fill="none" stroke="#171C1E" stroke-width="2" opacity="0.8" data-category="faults"/></g>
+    <g class="veinlets" id="veinlets"><path class="vein" d="M405 171.467L369 137.115" fill="none" stroke="#DB4639" stroke-width="2" data-category="veins"/>
+<path class="vein" d="M409 203.07L367 219.559" fill="none" stroke="#DB4639" stroke-width="2" data-category="veins"/>
+<path class="vein" d="M414 244.293L362 292.385" fill="none" stroke="#DB4639" stroke-width="2" data-category="veins"/>
+<path class="vein" d="M405 303L373 325.432" fill="none" stroke="#DB4639" stroke-width="2" data-category="veins"/>
+<path class="vein" d="M413.059 366.166L373 365" fill="none" stroke="#DB4639" stroke-width="2" data-category="veins"/>
+<path class="vein" d="M408.541 425.36L363 406.398" fill="none" stroke="#DB4639" stroke-width="2" data-category="veins"/>
+<path class="vein" d="M394.85 472.622L341 472.238" fill="none" stroke="#DB4639" stroke-width="2" data-category="veins"/>
+<path class="vein" d="M442 157.474L476 119" fill="none" stroke="#DB4639" stroke-width="2" data-category="veins"/>
+<path class="vein" d="M445 211L488 220.619" fill="none" stroke="#DB4639" stroke-width="2" data-category="veins"/>
+<path class="vein" d="M440 258L476 281" fill="none" stroke="#DB4639" stroke-width="2" data-category="veins"/>
+<path class="vein" d="M441 336.986L470 337" fill="none" stroke="#DB4639" stroke-width="2" data-category="veins"/>
+<path class="vein" d="M445 419L472 402" fill="none" stroke="#DB4639" stroke-width="2" data-category="veins"/>
+<path class="vein" d="M459.095 462.003L503.103 447.9" fill="none" stroke="#DB4639" stroke-width="2" data-category="veins"/></g>
+    <g class="drillholes" id="drillholes"><path class="drillhole" d="M131.64 48.9999L131 270" fill="none" stroke="#60737A" stroke-width="1.5" data-category="drillholes" stroke-dasharray="7 6"/>
+<path class="drillhole" d="M135 48L290 438" fill="none" stroke="#60737A" stroke-width="1.5" data-category="drillholes" stroke-dasharray="7 6"/>
+<path class="drillhole" d="M166.458 45.4034L326 436" fill="none" stroke="#60737A" stroke-width="1.5" data-category="drillholes" stroke-dasharray="7 6"/>
+<path class="drillhole" d="M232.685 42.0928L372.315 514.907" fill="none" stroke="#60737A" stroke-width="1.5" data-category="drillholes" stroke-dasharray="7 6"/>
+<path class="drillhole" d="M317 46L396 508.5" fill="none" stroke="#60737A" stroke-width="1.5" data-category="drillholes" stroke-dasharray="7 6"/>
+<path class="drillhole" d="M365 47L390 283" fill="none" stroke="#60737A" stroke-width="1.5" data-category="drillholes" stroke-dasharray="7 6"/>
+<path class="drillhole" d="M408 42L420 495" fill="none" stroke="#60737A" stroke-width="1.5" data-category="drillholes" stroke-dasharray="7 6"/>
+<path class="drillhole" d="M432 42L428 495" fill="none" stroke="#60737A" stroke-width="1.5" data-category="drillholes" stroke-dasharray="7 6"/>
+<path class="drillhole" d="M486 44L444 487" fill="none" stroke="#60737A" stroke-width="1.5" data-category="drillholes" stroke-dasharray="7 6"/>
+<path class="drillhole" d="M539 46L446 442" fill="none" stroke="#60737A" stroke-width="1.5" data-category="drillholes" stroke-dasharray="7 6"/>
+<path class="drillhole" d="M555 52L533 143" fill="none" stroke="#60737A" stroke-width="1.5" data-category="drillholes" stroke-dasharray="7 6"/>
+<path class="drillhole" d="M595.646 55.1274L511.553 261.249" fill="none" stroke="#60737A" stroke-width="1.5" data-category="drillholes" stroke-dasharray="7 6"/>
+<path class="drillhole" d="M629 55L460 502" fill="none" stroke="#60737A" stroke-width="1.5" data-category="drillholes" stroke-dasharray="7 6"/>
+<path class="drillhole" d="M697 67.9999L495 445" fill="none" stroke="#60737A" stroke-width="1.5" data-category="drillholes" stroke-dasharray="7 6"/>
+<path class="drillhole" d="M732 63L560 365" fill="none" stroke="#60737A" stroke-width="1.5" data-category="drillholes" stroke-dasharray="7 6"/>
+<path class="drillhole" d="M729.404 61.8843L728.404 283" fill="none" stroke="#60737A" stroke-width="1.5" data-category="drillholes" stroke-dasharray="7 6"/></g>
+    <g class="samples" id="samples"><circle class="sample" data-category="samples" data-sample-name="Sample 1" data-sample-link="" cx="160.80" cy="113.00" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 2" data-sample-link="" cx="186.70" cy="178.00" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 3" data-sample-link="" cx="212.50" cy="243.00" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 4" data-sample-link="" cx="238.30" cy="308.00" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 5" data-sample-link="" cx="264.20" cy="373.00" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 6" data-sample-link="" cx="172.60" cy="60.50" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 7" data-sample-link="" cx="187.70" cy="97.50" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 8" data-sample-link="" cx="210.50" cy="153.10" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 9" data-sample-link="" cx="233.20" cy="208.60" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 10" data-sample-link="" cx="255.90" cy="264.10" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 11" data-sample-link="" cx="278.70" cy="319.60" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 12" data-sample-link="" cx="301.40" cy="375.20" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 13" data-sample-link="" cx="324.10" cy="430.70" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 14" data-sample-link="" cx="240.60" cy="67.20" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 15" data-sample-link="" cx="251.90" cy="105.60" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 16" data-sample-link="" cx="268.90" cy="163.10" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 17" data-sample-link="" cx="285.80" cy="220.70" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 18" data-sample-link="" cx="302.70" cy="278.20" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 19" data-sample-link="" cx="319.60" cy="335.80" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 20" data-sample-link="" cx="336.60" cy="393.40" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 21" data-sample-link="" cx="353.50" cy="450.90" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 22" data-sample-link="" cx="318.40" cy="57.70" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 23" data-sample-link="" cx="325.10" cy="97.10" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 24" data-sample-link="" cx="335.30" cy="156.30" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 25" data-sample-link="" cx="345.40" cy="215.40" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 26" data-sample-link="" cx="355.60" cy="274.50" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 27" data-sample-link="" cx="365.70" cy="333.70" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 28" data-sample-link="" cx="375.90" cy="392.80" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 29" data-sample-link="" cx="386.00" cy="451.90" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 30" data-sample-link="" cx="367.00" cy="61.90" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 31" data-sample-link="" cx="370.90" cy="101.70" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 32" data-sample-link="" cx="376.70" cy="161.40" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 33" data-sample-link="" cx="382.60" cy="221.10" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 34" data-sample-link="" cx="388.50" cy="280.80" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 35" data-sample-link="" cx="408.50" cy="62.00" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 36" data-sample-link="" cx="409.60" cy="102.00" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 37" data-sample-link="" cx="411.20" cy="162.00" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 38" data-sample-link="" cx="412.80" cy="221.90" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 39" data-sample-link="" cx="414.40" cy="281.90" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 40" data-sample-link="" cx="415.90" cy="341.90" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 41" data-sample-link="" cx="417.50" cy="401.90" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 42" data-sample-link="" cx="419.10" cy="461.90" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 43" data-sample-link="" cx="431.80" cy="62.00" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 44" data-sample-link="" cx="431.50" cy="102.00" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 45" data-sample-link="" cx="430.90" cy="162.00" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 46" data-sample-link="" cx="430.40" cy="222.00" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 47" data-sample-link="" cx="429.90" cy="282.00" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 48" data-sample-link="" cx="429.40" cy="342.00" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 49" data-sample-link="" cx="428.80" cy="402.00" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 50" data-sample-link="" cx="428.30" cy="462.00" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 51" data-sample-link="" cx="484.10" cy="61.90" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 52" data-sample-link="" cx="480.30" cy="101.70" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 53" data-sample-link="" cx="474.70" cy="161.50" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 54" data-sample-link="" cx="469.00" cy="221.20" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 55" data-sample-link="" cx="463.30" cy="280.90" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 56" data-sample-link="" cx="457.70" cy="340.70" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 57" data-sample-link="" cx="452.00" cy="400.40" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 58" data-sample-link="" cx="446.40" cy="460.10" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 59" data-sample-link="" cx="550.40" cy="71.50" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 60" data-sample-link="" cx="541.30" cy="110.40" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 61" data-sample-link="" cx="510.90" cy="166.00" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 62" data-sample-link="" cx="497.10" cy="224.40" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 63" data-sample-link="" cx="483.40" cy="282.80" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 64" data-sample-link="" cx="469.70" cy="341.30" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 65" data-sample-link="" cx="456.00" cy="399.70" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 66" data-sample-link="" cx="617.90" cy="83.70" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 67" data-sample-link="" cx="603.80" cy="121.10" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 68" data-sample-link="" cx="582.70" cy="177.30" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 69" data-sample-link="" cx="561.50" cy="233.40" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 70" data-sample-link="" cx="540.40" cy="289.60" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 71" data-sample-link="" cx="519.20" cy="345.70" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 72" data-sample-link="" cx="469.00" cy="478.00" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 73" data-sample-link="" cx="482.00" cy="445.00" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 74" data-sample-link="" cx="488.00" cy="428.00" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 75" data-sample-link="" cx="460.00" cy="502.00" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 76" data-sample-link="" cx="482.00" cy="445.00" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 77" data-sample-link="" cx="507.00" cy="379.00" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 78" data-sample-link="" cx="497.00" cy="404.00" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 79" data-sample-link="" cx="680.50" cy="99.60" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 80" data-sample-link="" cx="661.60" cy="134.80" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 81" data-sample-link="" cx="633.10" cy="187.70" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 82" data-sample-link="" cx="604.70" cy="240.50" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 83" data-sample-link="" cx="576.30" cy="293.30" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 84" data-sample-link="" cx="547.80" cy="346.20" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 85" data-sample-link="" cx="527.00" cy="385.00" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 86" data-sample-link="" cx="693.30" cy="132.50" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 87" data-sample-link="" cx="666.70" cy="179.00" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 88" data-sample-link="" cx="640.00" cy="225.50" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 89" data-sample-link="" cx="613.30" cy="272.00" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 90" data-sample-link="" cx="586.70" cy="318.50" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 91" data-sample-link="" cx="729.17" cy="115.50" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 92" data-sample-link="" cx="729.02" cy="169.07" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 93" data-sample-link="" cx="728.79" cy="222.69" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 94" data-sample-link="" cx="728.56" cy="276.31" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 95" data-sample-link="" cx="575.17" cy="104.69" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 96" data-sample-link="" cx="554.80" cy="154.23" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 97" data-sample-link="" cx="534.33" cy="203.79" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 98" data-sample-link="" cx="513.86" cy="253.35" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 99" data-sample-link="" cx="131.41" cy="102.62" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 100" data-sample-link="" cx="131.26" cy="156.19" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 101" data-sample-link="" cx="131.03" cy="209.81" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 102" data-sample-link="" cx="130.79" cy="263.43" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 103" data-sample-link="" cx="444.00" cy="489.00" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 104" data-sample-link="" cx="428.00" cy="496.00" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 105" data-sample-link="" cx="420.00" cy="497.00" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 106" data-sample-link="" cx="397.00" cy="511.00" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 107" data-sample-link="" cx="373.00" cy="517.00" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 108" data-sample-link="" cx="392.00" cy="485.00" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 109" data-sample-link="" cx="366.00" cy="493.00" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 110" data-sample-link="" cx="291.00" cy="440.00" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 111" data-sample-link="" cx="277.00" cy="407.00" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/>
+<circle class="sample" data-category="samples" data-sample-name="Sample 112" data-sample-link="" cx="496.00" cy="443.00" r="2" fill="#F4B860" stroke="#071014" stroke-width="1.1"/></g>
+    <g class="water-table" id="waterTable"><path class="water-line" d="M36 100H798.5" fill="none" stroke="#26B9C6" stroke-width="2" data-category="water" stroke-dasharray="4 4"/></g>
+    <g class="boiling-level" id="boilingLevel"><path class="water-line boiling-line" style="stroke:#C66A58;stroke-width:1.6;stroke-dasharray:3 5;fill:none" d="M34 190H766" fill="none" stroke="#C66A58" stroke-width="1.6" data-category="water" stroke-dasharray="3 5"/></g>
+    <g class="surface-features" id="surfaceFeatures"><text class="map-label" data-category="labels" x="44.123" y="83.5" font-size="11" font-weight="bold" fill="#101816">PALEOSURFACE</text>
+<text class="map-label" data-category="labels" x="43.731" y="104.5" font-size="11" font-weight="bold" fill="#101816">WATER TABLE</text>
+<text class="map-label" data-category="labels" x="44.2656" y="220.5" font-size="11" font-weight="bold" fill="#101816">BOILING LEVEL</text></g>
+    <g class="temperature" id="temperatureLabels"><text class="map-label" data-category="labels" x="-1.76807" y="141.773" font-size="9" font-weight="bold" fill="#101816">100°C</text>
+<text class="map-label" data-category="labels" x="-1.57031" y="221.773" font-size="9" font-weight="bold" fill="#101816">150°C</text>
+<text class="map-label" data-category="labels" x="-2.40088" y="293.773" font-size="9" font-weight="bold" fill="#101816">200°C</text>
+<text class="map-label" data-category="labels" x="-2.53271" y="474.773" font-size="9" font-weight="bold" fill="#101816">300°C</text></g>
+    <g class="system-levels" id="systemLevels"><text class="map-label" data-category="labels" x="742.182" y="111.773" font-size="9" font-weight="bold" fill="#101816">UPPER</text>
+<text class="map-label" data-category="labels" x="739.765" y="284.773" font-size="9" font-weight="bold" fill="#101816">MIDDLE</text>
+<text class="map-label" data-category="labels" x="740.806" y="464.773" font-size="9" font-weight="bold" fill="#101816">LOWER</text></g>
+    <g class="labels" id="mineralLabels"><text class="map-label" data-category="labels" data-label-zone="Propylitic" x="0.445312" y="7.90909" transform="translate(178 351) rotate(-90)" font-size="8" font-weight="bold" fill="#101816">Propylitic</text>
+<text class="map-label" data-category="labels" data-label-zone="Propylitic" x="0.445312" y="7.90909" transform="translate(671 358) rotate(-90)" font-size="8" font-weight="bold" fill="#101816">Propylitic</text>
+<text class="map-label" data-category="labels" data-label-zone="Argillic" x="0.234375" y="7.90909" transform="translate(292.918 353.321) rotate(-100.116)" font-size="8" font-weight="bold" fill="#101816">Argillic</text>
+<text class="map-label" data-category="labels" data-label-zone="Argillic" x="0.234375" y="7.90909" transform="translate(620 163.058) rotate(-55.4352)" font-size="8" font-weight="bold" fill="#101816">Argillic</text>
+<text class="map-label" data-category="labels" data-label-zone="Sericitic" x="0.332031" y="7.90909" transform="translate(347.493 359.054) rotate(-97.8254)" font-size="8" font-weight="bold" fill="#101816">Sericitic</text>
+<text class="map-label" data-category="labels" data-label-zone="Sericitic" x="0.332031" y="7.90909" transform="translate(534 157.667) rotate(-64.0255)" font-size="8" font-weight="bold" fill="#101816">Sericitic</text>
+<text class="map-label" data-category="labels" data-label-zone="Advanced argillic" x="0.171875" y="7.90909" transform="translate(374.696 367.72) rotate(-97.3469)" font-size="8" font-weight="bold" fill="#101816">Advanced argillic</text>
+<text class="map-label" data-category="labels" data-label-zone="Advanced argillic" x="0.171875" y="7.90909" transform="translate(474 182.156) rotate(-73.371)" font-size="8" font-weight="bold" fill="#101816">Advanced argillic</text>
+<text class="map-label" data-category="labels" data-label-zone="Silicification" x="0.285156" y="7.90909" transform="translate(400.638 355.307) rotate(-91.9151)" font-size="8" font-weight="bold" fill="#101816">Silicification</text>
+<text class="map-label" data-category="labels" data-label-zone="Silicification" x="0.285156" y="7.90909" transform="translate(448 176.839) rotate(-85.3606)" font-size="8" font-weight="bold" fill="#101816">Silicification</text>
+<text class="map-label" data-category="labels" data-label-zone="Ore zone" x="0.445312" y="7.90909" transform="translate(419.02 327.013) rotate(-90.1537)" font-size="8" font-weight="bold" fill="#101816">Ore</text>
+<text class="map-label" data-category="labels" data-label-zone="Ore zone" x="0.445312" y="7.90909" transform="translate(421.571 153.37) rotate(-92.1828)" font-size="8" font-weight="bold" fill="#101816">Ore</text>
+<text class="map-label" data-category="labels" data-label-zone="Chalcedony blanket" x="197.047" y="92.9091" font-size="8" font-weight="bold" fill="#101816">Chalcedony blanket</text>
+<text class="map-label" data-category="labels" data-label-zone="Steam-heated cap" x="194.316" y="60.9091" font-size="8" font-weight="bold" fill="#101816">Steam-heated cap</text></g>
+    <g id="customLayers"></g>
+    <g id="markings"></g>
+    <g id="drawPreview"></g>
+    <g id="presetHandles"></g>
+  </g>
+</svg>
           <div class="orientation"><span>N</span><i></i><span>S</span></div>
           <div class="distance-scale"><span>0</span><i></i><span>100 m</span></div>
           <div class="map-hint" id="mapHint">Click a zone to inspect · Add a marking to annotate the section</div>
@@ -86,6 +252,7 @@
         <div class="detail-accent" id="detailAccent"></div>
         <div class="detail-head"><div class="inline-heading"><span class="eyebrow">SELECTED</span><strong id="detailType">Material zone</strong></div><button class="icon-btn" id="closeDetails">×</button></div>
         <h2 id="detailName">Advanced argillic</h2><div class="status"><span></span><button id="detailStatus" disabled>INTERPRETED</button></div>
+        <h3 class="sample-section-title">Samples</h3><div class="sample-tabs" id="zoneSampleTabs"><span>No samples on this layer</span></div>
         <div class="confidence"><div><span>Confidence</span><strong id="detailConfidence">91%</strong></div><input id="confidenceInput" type="range" min="1" max="100" value="91" disabled><div class="bar"><i id="confidenceBar"></i></div></div>
         <dl><div><dt>Depth range</dt><dd id="detailDepth" contenteditable="false">42–460 m</dd></div><div><dt>Est. volume</dt><dd id="detailVolume" contenteditable="false">0.34 Mm³</dd></div><div><dt>Last updated</dt><dd id="detailUpdated">18 Jun 2026</dd></div></dl>
         <h3>Mineral assemblage</h3><div class="chips" id="mineralChips"></div>
